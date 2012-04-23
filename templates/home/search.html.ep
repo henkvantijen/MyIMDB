@@ -1,0 +1,57 @@
+% layout 'Default';
+% title 'Search';
+% use Data::Dumper;
+%= javascript '/sorttable.js'
+
+
+<h2>Search</h2>
+
+
+% if ($return_result->{search_type} =~ /actors|movies/) {
+    <p>You've searched in <b><%== $return_result->{search_type} %></b> for: <b><%== $return_result->{search_query} || '<i>no query specified</i>' %></b> </p>
+
+	<i> Hint: click on the columns name to sort</i> 
+      <table class="sortable" border="1">
+      	  <th>Name</th>
+	  	  <th class="sorttable_nosort"> Details </th>
+    % foreach ( @{$return_result->{search_result}} ) {
+    <tr>
+		<td> 
+		     %= $_->name();
+		</td>
+		<td>
+			<a href="/<%=$return_result->{search_type}%>/details/<%= $_->id() %>">View details</a> 
+		</td>
+	</tr>
+    % }
+      </table>
+	
+% } elsif ($return_result->{genres}) {
+      <p>You've searched in genres for: <b> 
+    % if (defined $return_result->{search_query}) { 
+		<%==  $return_result->{search_query} || '<i>no query specified</i>' %>
+    % } #for some reason using an "else" here...didn't work
+      </b></p>
+      
+      <p>We've found the following matching genre(s): <b>
+    % if (defined $return_result->{genres}) {
+		% foreach (@{$return_result->{genres}}) {
+	    	%= $_->genre()
+		% }
+    % }
+      </b></p>
+
+      <p>We've found the following movies in those genres</p>
+
+      <table border="1">
+      	<th>Name</th>
+    	% foreach (@{$return_result->{movies}}) {
+      		<tr>
+				<td>
+	  			%= $_->name();
+				</td>
+      		</tr>
+    	% }
+      </table>
+% }
+

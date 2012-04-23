@@ -1,0 +1,17 @@
+% layout 'default';
+% title 'Join';
+
+% if (my $error = stash 'error') {
+	Sorry: <%= $error %>
+% }
+
+%= form_for 'join' => (method => 'POST') => begin
+	<table>
+	<tr><td>Username</td><td> <%= text_field 'username' %> </td></tr>
+	<tr><td>Password</td><td> <%= password_field 'pwd' %> </td></tr>
+	<tr><td>Password (again)</td><td> <%= password_field 're-pwd' %> </td></tr>
+	<tr><td>Email</td><td> <%= text_field 'email' %> </td></tr>
+	</table>
+	%= submit_button 'Join!'
+% end
+	

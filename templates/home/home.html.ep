@@ -1,0 +1,21 @@
+% layout 'default';
+% title 'MyIMDb Home';
+<h1>home</h1>
+
+% if (session 'name') {
+	<a href='/'>Home</a> or <a href='/logout'>Sign-Out</a>
+% } else {
+	<a href="/login">Sign-In</a> or <a href='/join'>Join us!</a>
+% }
+
+</br>
+</br>
+%= form_for '/home/search' => (method => 'POST') => begin
+	%= text_field 'search'
+	%= select_field type => [[Actors => 'actors'], [Movies => 'movies'], [Genres => 'genres']]
+	%= submit_button 'Search'
+% end 
+
+
+
+

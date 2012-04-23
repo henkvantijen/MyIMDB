@@ -1,0 +1,8 @@
+% layout 'default';
+% title 'Actor Details';
+
+
+<h2><%= $actor->name() %> </h2>
+
+Name: <%= $actor->name() %> </br> 
+Birth date: <%= $actor->bdate() %>

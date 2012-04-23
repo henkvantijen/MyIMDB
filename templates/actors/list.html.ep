@@ -1,0 +1,18 @@
+
+<table border="1">
+   <tr>
+         <th>Name</th>
+         <th>Birth Date</th>
+     </tr>
+     % foreach (@{$objs}) {
+     <tr>
+         <td>
+             %= $_->name()
+         </td>
+         <td>
+             %= $_->bdate()
+         </td>
+     % }
+     </tr>
+ </table>
+

@@ -1,0 +1,19 @@
+% layout 'default';
+% title 'Movie Details';
+
+<h2> <%= $movie->name() %> </h2>
+
+<table>
+	<tr><td>Launch date:</td><td> <%= $movie->launch_date() %> </td></tr>
+	<tr><td>Duration: </td><td> <%= $movie->duration() %> minutes </td></tr>
+	<tr><td>Rank: </td><td> <%= $movie->{rank} %> </td></tr>
+</table>
+
+%= form_for '/movies_set_rank' => (method => 'POST') => begin
+	<table>	
+		<tr><td>Set rank:</td>
+		<td> <%= select_field rank => [qw/1 2 3 4 5/] %> </td></tr>
+	</table>
+	%= hidden_field id => $movie->id()
+	%= submit_button 'Set'
+% end
