@@ -6,8 +6,9 @@ use warnings;
 use base 'MyIMDB::Models::Base';
 
 __PACKAGE__->set_up_table('users');
-
 __PACKAGE__->has_many( movies => 'MyIMDB::Models::UsersMovies' );
+
+
 
 __PACKAGE__->set_sql( login_count => qq{
 		SELECT COUNT(*) FROM __TABLE__ WHERE name=? AND pass=?

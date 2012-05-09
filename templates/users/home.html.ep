@@ -3,3 +3,8 @@
 % if( session('name') ){
 	Hi <%= session('name') %> 
 % }
+<br/>
+Your favorite movies are:
+% foreach( @{$favorited_movies} ){
+	<ul><%= $_ %></ul>
+% }

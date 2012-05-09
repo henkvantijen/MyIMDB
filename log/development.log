@@ -13071,3 +13071,381 @@ Compilation failed in require at (eval 252) line 1.
 [Wed May  9 01:33:37 2012] [debug] Your secret passphrase needs to be changed!!!
 [Wed May  9 01:33:37 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
 [Wed May  9 01:33:37 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 16:44:08 2012] [info] Listening at "http://*:3000".
+[Wed May  9 16:44:11 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 16:44:11 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:44:11 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Wed May  9 16:44:11 2012] [debug] Rendering template "home/home.html.ep".
+[Wed May  9 16:44:11 2012] [debug] Rendering template "layouts/home.html.ep".
+[Wed May  9 16:44:11 2012] [debug] 200 OK (0.637472s, 1.569/s).
+[Wed May  9 16:44:15 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:44:15 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 16:46:41 2012] [info] Listening at "http://*:3000".
+[Wed May  9 16:46:45 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 16:46:45 2012] [debug] GET /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:46:45 2012] [debug] Rendering template "login/login.html.ep".
+[Wed May  9 16:46:45 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 16:46:45 2012] [debug] 200 OK (0.033593s, 29.768/s).
+[Wed May  9 16:46:50 2012] [debug] POST /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:46:50 2012] [debug] Routing to controller "MyIMDB::Login" and action "login".
+[Wed May  9 16:46:50 2012] [debug] 302 Found (0.175822s, 5.688/s).
+[Wed May  9 16:46:50 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:46:50 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 16:48:31 2012] [info] Listening at "http://*:3000".
+[Wed May  9 16:48:34 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 16:48:34 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:48:34 2012] [error] Global symbol "@movieIDs" requires explicit package name at script/../lib/MyIMDB/Users.pm line 33.
+Compilation failed in require at (eval 252) line 1.
+
+[Wed May  9 16:48:34 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 16:48:34 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 16:48:34 2012] [debug] Rendering inline template.
+[Wed May  9 16:48:34 2012] [debug] Rendering inline template.
+[Wed May  9 16:48:34 2012] [debug] 500 Internal Server Error (0.176666s, 5.660/s).
+[Wed May  9 16:48:46 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:48:46 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 16:48:46 2012] [error] Can't locate object method "home" via package "MyIMDB::Users" at /usr/lib/perl5/site_perl/5.14.2/Mojolicious/Routes.pm line 155
+
+[Wed May  9 16:48:46 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 16:48:46 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 16:48:46 2012] [debug] Rendering inline template.
+[Wed May  9 16:48:46 2012] [debug] Rendering inline template.
+[Wed May  9 16:48:46 2012] [debug] 500 Internal Server Error (0.061004s, 16.392/s).
+[Wed May  9 16:48:49 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 16:48:49 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:48:49 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 16:48:49 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 16:48:49 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 16:48:49 2012] [debug] 200 OK (0.142830s, 7.001/s).
+[Wed May  9 16:56:31 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:56:31 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 16:56:31 2012] [debug] Rendering cached template "users/home.html.ep".
+[Wed May  9 16:56:31 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Wed May  9 16:56:31 2012] [debug] 200 OK (0.006928s, 144.342/s).
+[Wed May  9 16:56:59 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:56:59 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 16:56:59 2012] [debug] Rendering cached template "users/home.html.ep".
+[Wed May  9 16:56:59 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Wed May  9 16:56:59 2012] [debug] 200 OK (0.006488s, 154.131/s).
+[Wed May  9 16:57:03 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 16:57:03 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:57:03 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 16:57:03 2012] [error] Can't locate object method "id" via package "Class::DBI::Iterator" at script/../lib/MyIMDB/Users.pm line 32.
+
+[Wed May  9 16:57:03 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 16:57:03 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 16:57:03 2012] [debug] Rendering inline template.
+[Wed May  9 16:57:03 2012] [debug] Rendering inline template.
+[Wed May  9 16:57:04 2012] [debug] 500 Internal Server Error (0.225725s, 4.430/s).
+[Wed May  9 16:57:41 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 16:57:41 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 16:57:41 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 16:57:41 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 16:57:41 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 16:57:41 2012] [debug] 200 OK (0.215963s, 4.630/s).
+[Wed May  9 17:02:36 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:02:36 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:02:36 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:02:36 2012] [error] Undefined subroutine &MyIMDB::Users::Dumpr called at /usr/lib/perl5/site_perl/5.14.2/Mojolicious/Routes.pm line 155
+
+[Wed May  9 17:02:36 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:02:36 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:02:36 2012] [debug] Rendering inline template.
+[Wed May  9 17:02:36 2012] [debug] Rendering inline template.
+[Wed May  9 17:02:36 2012] [debug] 500 Internal Server Error (0.210512s, 4.750/s).
+[Wed May  9 17:02:52 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:02:52 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:02:52 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:02:52 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 17:02:52 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 17:02:52 2012] [debug] 200 OK (0.147662s, 6.772/s).
+[Wed May  9 17:05:13 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:05:13 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:05:13 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:05:13 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 17:05:13 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 17:05:13 2012] [debug] 200 OK (0.144147s, 6.937/s).
+[Wed May  9 17:05:43 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:05:43 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:05:43 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:05:43 2012] [error] Can't locate object method "movie_id" via package "Class::DBI::Iterator" at script/../lib/MyIMDB/Users.pm line 33.
+
+[Wed May  9 17:05:43 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:05:43 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:05:43 2012] [debug] Rendering inline template.
+[Wed May  9 17:05:43 2012] [debug] Rendering inline template.
+[Wed May  9 17:05:43 2012] [debug] 500 Internal Server Error (0.207798s, 4.812/s).
+[Wed May  9 17:07:06 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:07:06 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:07:06 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:07:06 2012] [error] Can't locate object method "movie_id" via package "Class::DBI::Iterator" at script/../lib/MyIMDB/Users.pm line 33.
+
+[Wed May  9 17:07:06 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:07:06 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:07:06 2012] [debug] Rendering inline template.
+[Wed May  9 17:07:06 2012] [debug] Rendering inline template.
+[Wed May  9 17:07:06 2012] [debug] 500 Internal Server Error (0.178311s, 5.608/s).
+[Wed May  9 17:08:02 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:08:02 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:08:03 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:08:03 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 17:08:03 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 17:08:03 2012] [debug] 200 OK (0.148475s, 6.735/s).
+[Wed May  9 17:08:32 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:08:32 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:08:32 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:08:32 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 17:08:32 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 17:08:32 2012] [debug] 200 OK (0.140544s, 7.115/s).
+[Wed May  9 17:21:02 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:21:02 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:21:02 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:21:02 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 17:21:02 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 17:21:02 2012] [debug] 200 OK (0.142735s, 7.006/s).
+[Wed May  9 17:21:13 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:21:13 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:21:14 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:21:14 2012] [error] Can't locate object method "id" via package "Class::DBI::Iterator" at script/../lib/MyIMDB/Users.pm line 34.
+
+[Wed May  9 17:21:14 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:21:14 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:21:14 2012] [debug] Rendering inline template.
+[Wed May  9 17:21:14 2012] [debug] Rendering inline template.
+[Wed May  9 17:21:14 2012] [debug] 500 Internal Server Error (0.196845s, 5.080/s).
+[Wed May  9 17:23:49 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:23:49 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:23:49 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:23:49 2012] [error] Can't locate object method "id" via package "Class::DBI::Iterator" at script/../lib/MyIMDB/Users.pm line 34.
+
+[Wed May  9 17:23:49 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:23:49 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:23:49 2012] [debug] Rendering inline template.
+[Wed May  9 17:23:49 2012] [debug] Rendering inline template.
+[Wed May  9 17:23:49 2012] [debug] 500 Internal Server Error (0.199149s, 5.021/s).
+[Wed May  9 17:24:14 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:24:14 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:24:14 2012] [error] syntax error at script/../lib/MyIMDB/Users.pm line 32, near ""user\n" $user"
+Compilation failed in require at (eval 252) line 1.
+
+[Wed May  9 17:24:14 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:24:14 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:24:14 2012] [debug] Rendering inline template.
+[Wed May  9 17:24:14 2012] [debug] Rendering inline template.
+[Wed May  9 17:24:14 2012] [debug] 500 Internal Server Error (0.174264s, 5.738/s).
+[Wed May  9 17:24:27 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:24:27 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:24:27 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:24:27 2012] [error] Can't locate object method "id" via package "Class::DBI::Iterator" at script/../lib/MyIMDB/Users.pm line 34.
+
+[Wed May  9 17:24:27 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:24:27 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:24:27 2012] [debug] Rendering inline template.
+[Wed May  9 17:24:27 2012] [debug] Rendering inline template.
+[Wed May  9 17:24:27 2012] [debug] 500 Internal Server Error (0.204164s, 4.898/s).
+[Wed May  9 17:25:21 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:25:21 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:25:21 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:25:21 2012] [error] Can't locate object method "id" via package "Class::DBI::Iterator" at script/../lib/MyIMDB/Users.pm line 34.
+
+[Wed May  9 17:25:21 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:25:21 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:25:21 2012] [debug] Rendering inline template.
+[Wed May  9 17:25:21 2012] [debug] Rendering inline template.
+[Wed May  9 17:25:21 2012] [debug] 500 Internal Server Error (0.194346s, 5.145/s).
+[Wed May  9 17:28:12 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:28:12 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:28:12 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:29:08 2012] [info] Listening at "http://*:3000".
+[Wed May  9 17:29:32 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:29:32 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:29:32 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:29:32 2012] [error] Can't call method "next" without a package or object reference at script/../lib/MyIMDB/Users.pm line 27.
+
+[Wed May  9 17:29:32 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:29:32 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:29:32 2012] [debug] Rendering inline template.
+[Wed May  9 17:29:32 2012] [debug] Rendering inline template.
+[Wed May  9 17:29:32 2012] [debug] 500 Internal Server Error (0.193062s, 5.180/s).
+[Wed May  9 17:29:43 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:29:43 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:29:43 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:29:43 2012] [error] Not a SCALAR reference at script/../lib/MyIMDB/Users.pm line 27.
+
+[Wed May  9 17:29:43 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:29:43 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:29:43 2012] [debug] Rendering inline template.
+[Wed May  9 17:29:43 2012] [debug] Rendering inline template.
+[Wed May  9 17:29:43 2012] [debug] 500 Internal Server Error (0.180809s, 5.531/s).
+[Wed May  9 17:30:04 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 17:30:04 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 17:30:04 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 17:30:04 2012] [error] Can't call method "next" on an undefined value at script/../lib/MyIMDB/Users.pm line 27.
+
+[Wed May  9 17:30:04 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 17:30:04 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 17:30:04 2012] [debug] Rendering inline template.
+[Wed May  9 17:30:04 2012] [debug] Rendering inline template.
+[Wed May  9 17:30:04 2012] [debug] 500 Internal Server Error (0.190000s, 5.263/s).
+[Wed May  9 18:24:12 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:24:12 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:24:13 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:25:15 2012] [info] Listening at "http://*:3000".
+[Wed May  9 18:25:19 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:25:19 2012] [debug] POST /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:25:19 2012] [debug] Routing to controller "MyIMDB::Login" and action "login".
+[Wed May  9 18:25:19 2012] [debug] Rendering template "login/login.html.ep".
+[Wed May  9 18:25:19 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:25:19 2012] [debug] 200 OK (0.143250s, 6.981/s).
+[Wed May  9 18:25:21 2012] [debug] POST /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:25:21 2012] [debug] Routing to controller "MyIMDB::Login" and action "login".
+[Wed May  9 18:25:21 2012] [debug] 302 Found (0.008649s, 115.620/s).
+[Wed May  9 18:25:22 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:25:22 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:25:22 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:25:22 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:25:22 2012] [debug] 200 OK (0.036549s, 27.361/s).
+[Wed May  9 18:28:04 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:28:04 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:28:04 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:28:04 2012] [error] Can't locate object method "id" via package "Class::DBI::Iterator" at script/../lib/MyIMDB/Users.pm line 34.
+
+[Wed May  9 18:28:04 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 18:28:04 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 18:28:04 2012] [debug] Rendering inline template.
+[Wed May  9 18:28:04 2012] [debug] Rendering inline template.
+[Wed May  9 18:28:04 2012] [debug] 500 Internal Server Error (0.226392s, 4.417/s).
+[Wed May  9 18:38:55 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:38:55 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:38:55 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:38:55 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:38:55 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:38:55 2012] [debug] 200 OK (0.150701s, 6.636/s).
+[Wed May  9 18:39:54 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:39:54 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:39:54 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:39:54 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:39:54 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:39:54 2012] [debug] 200 OK (0.186356s, 5.366/s).
+[Wed May  9 18:41:23 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:41:23 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:41:23 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:41:23 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:41:23 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:41:23 2012] [debug] 200 OK (0.176697s, 5.659/s).
+[Wed May  9 18:43:57 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:43:57 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:43:57 2012] [debug] Rendering cached template "users/home.html.ep".
+[Wed May  9 18:43:57 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Wed May  9 18:43:57 2012] [debug] 200 OK (0.030662s, 32.614/s).
+[Wed May  9 18:44:06 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:44:06 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:44:06 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:44:06 2012] [error] Can't locate object method "favorited" via package "Class::DBI::Iterator" at script/../lib/MyIMDB/Users.pm line 27.
+
+[Wed May  9 18:44:06 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 18:44:06 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 18:44:06 2012] [debug] Rendering inline template.
+[Wed May  9 18:44:06 2012] [debug] Rendering inline template.
+[Wed May  9 18:44:06 2012] [debug] 500 Internal Server Error (0.184743s, 5.413/s).
+[Wed May  9 18:44:26 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:44:26 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:44:26 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:44:26 2012] [error] Can't locate object method "favorited" via package "MyIMDB::Models::Users" at script/../lib/MyIMDB/Users.pm line 27.
+
+[Wed May  9 18:44:26 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 18:44:26 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 18:44:26 2012] [debug] Rendering inline template.
+[Wed May  9 18:44:26 2012] [debug] Rendering inline template.
+[Wed May  9 18:44:26 2012] [debug] 500 Internal Server Error (0.189957s, 5.264/s).
+[Wed May  9 18:45:14 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:45:14 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:45:14 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:45:14 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:45:14 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:45:14 2012] [debug] 200 OK (0.140849s, 7.100/s).
+[Wed May  9 18:45:35 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:45:35 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:45:35 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:45:35 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:45:35 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:45:35 2012] [debug] 200 OK (0.147297s, 6.789/s).
+[Wed May  9 18:47:13 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:47:13 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:47:13 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:47:13 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:47:13 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:47:13 2012] [debug] 200 OK (0.151545s, 6.599/s).
+[Wed May  9 18:54:04 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:54:04 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:54:05 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:54:05 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:54:05 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:54:05 2012] [debug] 200 OK (0.143001s, 6.993/s).
+[Wed May  9 18:56:10 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:56:10 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:56:10 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:56:10 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:56:10 2012] [error] Global symbol "@favorited_movies" requires explicit package name at template "users/home.html.ep" line 8, near "	<ul><%= $_ %></ul>".
+3: % if( session('name') ){
+4: 	Hi <%= session('name') %> 
+5: % }
+6: 
+7: Your favorite movies are:
+8: % foreach( @favorited_movies ){
+9: 	<ul><%= $_ %></ul>
+10: % }
+
+[Wed May  9 18:56:10 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 18:56:10 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 18:56:10 2012] [debug] Rendering inline template.
+[Wed May  9 18:56:10 2012] [debug] Rendering inline template.
+[Wed May  9 18:56:10 2012] [debug] 500 Internal Server Error (0.191939s, 5.210/s).
+[Wed May  9 18:56:14 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:56:14 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:56:14 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:56:14 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:56:14 2012] [error] Global symbol "@favorited_movies" requires explicit package name at template "users/home.html.ep" line 8, near "	<ul><%= $_ %></ul>".
+3: % if( session('name') ){
+4: 	Hi <%= session('name') %> 
+5: % }
+6: 
+7: Your favorite movies are:
+8: % foreach( @favorited_movies ){
+9: 	<ul><%= $_ %></ul>
+10: % }
+
+[Wed May  9 18:56:14 2012] [debug] Template "exception.development.html.ep" not found.
+[Wed May  9 18:56:14 2012] [debug] Template "exception.html.ep" not found.
+[Wed May  9 18:56:14 2012] [debug] Rendering inline template.
+[Wed May  9 18:56:14 2012] [debug] Rendering inline template.
+[Wed May  9 18:56:14 2012] [debug] 500 Internal Server Error (0.192061s, 5.207/s).
+[Wed May  9 18:57:01 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:57:01 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:57:01 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:57:01 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:57:01 2012] [debug] 200 OK (0.025932s, 38.562/s).
+[Wed May  9 18:57:13 2012] [debug] Your secret passphrase needs to be changed!!!
+[Wed May  9 18:57:13 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:57:13 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:57:13 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:57:13 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:57:13 2012] [debug] 200 OK (0.148150s, 6.750/s).
+[Wed May  9 18:57:49 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:57:49 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Wed May  9 18:57:49 2012] [debug] Rendering template "home/home.html.ep".
+[Wed May  9 18:57:49 2012] [debug] Rendering template "layouts/home.html.ep".
+[Wed May  9 18:57:49 2012] [debug] 200 OK (0.021059s, 47.486/s).
+[Wed May  9 18:57:50 2012] [debug] GET /logout (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:57:50 2012] [debug] Routing to controller "MyIMDB::Logout" and action "logout".
+[Wed May  9 18:57:50 2012] [debug] 302 Found (0.021490s, 46.533/s).
+[Wed May  9 18:57:50 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:57:50 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Wed May  9 18:57:50 2012] [debug] Rendering template "home/home.html.ep".
+[Wed May  9 18:57:50 2012] [debug] Rendering template "layouts/home.html.ep".
+[Wed May  9 18:57:50 2012] [debug] 200 OK (0.013248s, 75.483/s).
+[Wed May  9 18:57:52 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Wed May  9 18:57:52 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Wed May  9 18:57:52 2012] [debug] Rendering template "users/home.html.ep".
+[Wed May  9 18:57:52 2012] [debug] Rendering template "layouts/default.html.ep".
+[Wed May  9 18:57:52 2012] [debug] 200 OK (0.029848s, 33.503/s).
