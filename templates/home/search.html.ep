@@ -1,4 +1,4 @@
-% layout 'Default';
+% layout 'default';
 % title 'Search';
 % use Data::Dumper;
 %= javascript '/sorttable.js'
@@ -42,13 +42,17 @@
       </b></p>
 
       <p>We've found the following movies in those genres</p>
-
-      <table border="1">
+		
+      <table class="sortable" border="1">
       	<th>Name</th>
+		<th class="sorttable_nosort">Details</th>
     	% foreach (@{$return_result->{movies}}) {
       		<tr>
 				<td>
-	  			%= $_->name();
+	  				%= $_->name();
+				</td>
+				<td>
+					<a href="/movies/details/<%= $_->id() %>">View Details</a>
 				</td>
       		</tr>
     	% }

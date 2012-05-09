@@ -6,14 +6,36 @@
 <table>
 	<tr><td>Launch date:</td><td> <%= $movie->launch_date() %> </td></tr>
 	<tr><td>Duration: </td><td> <%= $movie->duration() %> minutes </td></tr>
-	<tr><td>Rank: </td><td> <%= $movie->{rank} %> </td></tr>
+	<tr><td>Rating: </td><td> <%= $movie->{rating} %> </td></tr>
 </table>
+<br/><br/>
 
-%= form_for '/movies_set_rank' => (method => 'POST') => begin
-	<table>	
-		<tr><td>Set rank:</td>
-		<td> <%= select_field rank => [qw/1 2 3 4 5/] %> </td></tr>
-	</table>
-	%= hidden_field id => $movie->id()
-	%= submit_button 'Set'
-% end
+% my $user_name;
+% if( session ('name') ){
+%	$user_name = session('name');
+% }
+
+% if ($user_name and $movie->{rated} eq 'y') {
+	You've already rated this movie
+% } elsif ($user_name) {
+	%= form_for '/movies_set_rank' => (method => 'POST') => begin
+		<table>	
+			<tr>
+				<td>Set rating:</td>
+				<td> <%= select_field rating => [qw/1 2 3 4 5/] %> </td>
+				<td> <%= submit_button 'Set' %>
+			</tr>
+		</table>
+		%= hidden_field id => $movie->id()
+	% end
+% }
+
+% if ($user_name and $movie->{favorited} eq 'y') {
+	Movie already marked as 'favorite' 
+% } elsif ($user_name) {
+	%= form_for '/movies_favorited' => (method => 'POST') => begin
+		Mark as favorite: 
+		%= hidden_field id => $movie->id();
+		%= submit_button 'Mark'
+	% end
+% } 

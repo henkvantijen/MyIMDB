@@ -76,7 +76,7 @@ CREATE TABLE `movies` (
   `name` char(100) DEFAULT NULL,
   `launch_date` date DEFAULT NULL,
   `duration` int(255) DEFAULT NULL,
-  `rank` int(1) DEFAULT '0',
+  `rating` smallint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -87,7 +87,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-INSERT INTO `movies` VALUES (0,'Fight Club','1999-10-15',139,0),(1,'Seven','1995-09-22',127,0);
+INSERT INTO `movies` VALUES (0,'Fight Club','1999-10-15',139,2),(1,'Seven','1995-09-22',127,1);
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +152,7 @@ CREATE TABLE `users` (
   `pass` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,8 +161,34 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'andrei','andrei','andrei@andrei.ro'),(2,'test','test','test@test.ro'),(5,'us','0b3b97fa66886c5688ee4ae80ec0c3c2','us@us.us');
+INSERT INTO `users` VALUES (1,'andrei','andrei','andrei@andrei.ro'),(2,'test','test','test@test.ro'),(5,'us','0b3b97fa66886c5688ee4ae80ec0c3c2','us@us.us'),(6,'test2','ad0234829205b9033196ba818f7a872b','test@test2.ds');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users_movies`
+--
+
+DROP TABLE IF EXISTS `users_movies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_movies` (
+  `user_id` int(100) NOT NULL DEFAULT '0',
+  `movie_id` int(100) NOT NULL DEFAULT '0',
+  `rated` char(1) DEFAULT NULL,
+  `favorited` char(1) DEFAULT NULL,
+  PRIMARY KEY (`user_id`,`movie_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_movies`
+--
+
+LOCK TABLES `users_movies` WRITE;
+/*!40000 ALTER TABLE `users_movies` DISABLE KEYS */;
+INSERT INTO `users_movies` VALUES (5,0,'y',NULL),(5,1,NULL,'y');
+/*!40000 ALTER TABLE `users_movies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -174,4 +200,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-04-23 21:36:04
+-- Dump completed on 2012-05-09 15:02:41

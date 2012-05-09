@@ -1,4 +1,4 @@
-% layout 'default';
+% layout 'home';
 % title 'MyIMDb Home';
 <h1>home</h1>
 

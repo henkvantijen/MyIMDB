@@ -34,6 +34,9 @@ sub startup {
   # Movies routes
   $r->route('/movies/details/:id')->to('movies#details', id => qr /\d+/);
   $r->route('/movies_set_rank')->to('movies#setRank');
+  $r->route('/movies_favorited')->to('movies#favorited');
+
+  $r->route('/#username')->to('users#home');
 }
 
 1;

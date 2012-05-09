@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head><title><%= title %></title></head>
-  <body><%= content %></body>
+  <body>
+	  <div id="container">
+	  	  <%= content %>
+	  </div>
+	  <div id="footer">
+		   </br> </br> 
+	       <a href='/'>Home</a> 
+	  </div>
+  </body>
 </html>
