@@ -31,16 +31,18 @@ sub details {
 		my %search_keys = ( user_id => $user_id, movie_id => $movie_id );
 		my $user_movie = MyIMDB::Models::UsersMovies->retrieve( %search_keys );
 		
-		#the key $movie->{rated} contains the user's preference for this movie 
-		#eg: if 'y' the movie has been rated and the user should not be able to rate it again
-		if( $user_movie->rated() ){
-			$movie->{rated} = $user_movie->rated();
-		}
+		if( $user_movie ) {
+			#the key $movie->{rated} contains the user's preference for this movie 
+			#eg: if 'y' the movie has been rated and the user should not be able to rate it again
+			if( $user_movie->rated() ){
+				$movie->{rated} = $user_movie->rated();
+			}
 		
-		#the key $movie->{favorited} contains the user's preference for this movie
-		#eg: if 'y' the movie has been marked as 'favorite' and the user should not be able to mark it again
-		if( $user_movie->favorited() ){
-			$movie->{favorited} = $user_movie->favorited();
+			#the key $movie->{favorited} contains the user's preference for this movie
+			#eg: if 'y' the movie has been marked as 'favorite' and the user should not be able to mark it again
+			if( $user_movie->favorited() ){
+				$movie->{favorited} = $user_movie->favorited();
+			}
 		}
 	}
 
