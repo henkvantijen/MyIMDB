@@ -88,7 +88,7 @@ sub setRank {
 	$self->redirect_to( "movies/details/$movie_id" );
 }
 
-sub favorited {
+sub markFavorite {
 	my $self = shift;
 
 	my $user_name = $self->session('name');

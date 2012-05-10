@@ -6,3 +6,20 @@
 
 Name: <%= $actor->name() %> </br> 
 Birth date: <%= $actor->bdate() %>
+<br/><br/>
+
+% my $user_name;
+% if( session ('name') ){
+%   $user_name = session('name');
+% }
+ 
+% if ($user_name and $actor->{favorited} eq 'y') {
+    Actor already marked as 'favorite'
+% } elsif ($user_name) {
+    %= form_for '/actors_favorited' => (method => 'POST') => begin
+        Mark as favorite:
+        %= hidden_field id => $actor->id();
+        %= submit_button 'Mark'
+    % end
+% }
+

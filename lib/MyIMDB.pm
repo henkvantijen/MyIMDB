@@ -30,11 +30,12 @@ sub startup {
   # Actors routes
   $r->route('/actors/details/:id')->to('actors#details', id => qr /\d+/);
   $r->route('/actors')->to('actors#list');
+  $r->route('/actors_favorited')->to('actors#markFavorite');
 
   # Movies routes
   $r->route('/movies/details/:id')->to('movies#details', id => qr /\d+/);
   $r->route('/movies_set_rank')->to('movies#setRank');
-  $r->route('/movies_favorited')->to('movies#favorited');
+  $r->route('/movies_favorited')->to('movies#markFavorite');
 
   $r->route('/#username')->to('users#home');
 }

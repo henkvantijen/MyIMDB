@@ -166,6 +166,31 @@ INSERT INTO `users` VALUES (1,'andrei','andrei','andrei@andrei.ro'),(2,'test','t
 UNLOCK TABLES;
 
 --
+-- Table structure for table `users_actors`
+--
+
+DROP TABLE IF EXISTS `users_actors`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_actors` (
+  `user_id` int(100) NOT NULL DEFAULT '0',
+  `actor_id` int(100) NOT NULL DEFAULT '0',
+  `favorited` char(1) DEFAULT NULL,
+  PRIMARY KEY (`user_id`,`actor_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_actors`
+--
+
+LOCK TABLES `users_actors` WRITE;
+/*!40000 ALTER TABLE `users_actors` DISABLE KEYS */;
+INSERT INTO `users_actors` VALUES (6,0,'y');
+/*!40000 ALTER TABLE `users_actors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users_movies`
 --
 
@@ -187,7 +212,7 @@ CREATE TABLE `users_movies` (
 
 LOCK TABLES `users_movies` WRITE;
 /*!40000 ALTER TABLE `users_movies` DISABLE KEYS */;
-INSERT INTO `users_movies` VALUES (5,0,'y',NULL),(5,1,NULL,'y');
+INSERT INTO `users_movies` VALUES (5,0,'y','y'),(5,1,NULL,'y'),(6,1,NULL,'y');
 /*!40000 ALTER TABLE `users_movies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -200,4 +225,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-05-09 18:40:32
+-- Dump completed on 2012-05-10 23:47:00

@@ -8,3 +8,10 @@ Your favorite movies are:
 % foreach( @{$favorited_movies} ){
 	<ul><%= $_ %></ul>
 % }
+
+<br/><br/>
+
+Your favorite actors are:
+% foreach( @{$favorited_actors} ){
+	<ul><%= $_ %></ul>
+% }

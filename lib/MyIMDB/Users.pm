@@ -12,6 +12,8 @@ sub home {
 	my $self = shift;
 	my $user_name = $self->param('username');
 	my @favorited_movies;
+	my @favorited_actors;
+
 	
 	#based on the user name, search the Users table for the id
 	my $it = MyIMDB::Models::Users->search(name => $user_name);
@@ -25,12 +27,20 @@ sub home {
 	foreach( $user->movies ){
 		#if the movie is marked as favorited push it into @favorited_movies 
 		if( $_->favorited ){
-		   	print Dumper ($_->movie_id->name);
-			push (@favorited_movies, $_->movie_id->name);
+			push( @favorited_movies, $_->movie_id->name );
 		}
 	}
-	
-	$self->stash( favorited_movies => \@favorited_movies );
+
+	#for favorited actors it's the same as for favorited movies	
+	foreach( $user->actors ){
+		if( $_->favorited ){
+			push( @favorited_actors, $_->actor_id->name );
+		}
+	}
+
+	$self->stash( favorited_movies => \@favorited_movies,
+				  favorited_actors => \@favorited_actors,
+	);
 		
 } 
 

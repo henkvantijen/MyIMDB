@@ -7,7 +7,7 @@ use base 'MyIMDB::Models::Base';
 
 __PACKAGE__->set_up_table('users');
 __PACKAGE__->has_many( movies => 'MyIMDB::Models::UsersMovies' );
-
+__PACKAGE__->has_many( actors => 'MyIMDB::Models::UsersActors' );
 
 
 __PACKAGE__->set_sql( login_count => qq{
