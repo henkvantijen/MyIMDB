@@ -38,7 +38,8 @@ sub home {
 		}
 	}
 
-	$self->stash( favorited_movies => \@favorited_movies,
+	$self->stash( user_name => $user_name,
+				  favorited_movies => \@favorited_movies,
 				  favorited_actors => \@favorited_actors,
 	);
 		

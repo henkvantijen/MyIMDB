@@ -13937,3 +13937,296 @@ Compilation failed in require at (eval 252) line 1.
 [Thu May 10 23:45:01 2012] [debug] Rendering template "users/home.html.ep".
 [Thu May 10 23:45:01 2012] [debug] Rendering template "layouts/default.html.ep".
 [Thu May 10 23:45:01 2012] [debug] 200 OK (0.181086s, 5.522/s).
+[Sun May 13 20:12:54 2012] [info] Listening at "http://*:3000".
+[Sun May 13 20:12:58 2012] [debug] Your secret passphrase needs to be changed!!!
+[Sun May 13 20:12:58 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:12:59 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Sun May 13 20:12:59 2012] [debug] Rendering template "home/home.html.ep".
+[Sun May 13 20:12:59 2012] [debug] Rendering template "layouts/home.html.ep".
+[Sun May 13 20:12:59 2012] [debug] 200 OK (0.648549s, 1.542/s).
+[Sun May 13 20:13:01 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:13:01 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:13:01 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:13:01 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:13:01 2012] [debug] 200 OK (0.053392s, 18.729/s).
+[Sun May 13 20:13:10 2012] [debug] GET /test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:13:10 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:13:10 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:13:10 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:13:10 2012] [debug] 200 OK (0.018333s, 54.546/s).
+[Sun May 13 20:13:16 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:13:16 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Sun May 13 20:13:16 2012] [debug] Rendering cached template "home/home.html.ep".
+[Sun May 13 20:13:16 2012] [debug] Rendering cached template "layouts/home.html.ep".
+[Sun May 13 20:13:16 2012] [debug] 200 OK (0.004117s, 242.895/s).
+[Sun May 13 20:13:20 2012] [debug] GET /join (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:13:20 2012] [debug] Rendering template "join/join.html.ep".
+[Sun May 13 20:13:20 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:13:20 2012] [debug] 200 OK (0.094423s, 10.591/s).
+[Sun May 13 20:13:22 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:13:22 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Sun May 13 20:13:22 2012] [debug] Rendering cached template "home/home.html.ep".
+[Sun May 13 20:13:22 2012] [debug] Rendering cached template "layouts/home.html.ep".
+[Sun May 13 20:13:22 2012] [debug] 200 OK (0.004194s, 238.436/s).
+[Sun May 13 20:13:24 2012] [debug] GET /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:13:24 2012] [debug] Rendering template "login/login.html.ep".
+[Sun May 13 20:13:24 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:13:24 2012] [debug] 200 OK (0.019768s, 50.587/s).
+[Sun May 13 20:13:26 2012] [debug] POST /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:13:26 2012] [debug] Routing to controller "MyIMDB::Login" and action "login".
+[Sun May 13 20:13:26 2012] [debug] 302 Found (0.043947s, 22.755/s).
+[Sun May 13 20:13:26 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:13:26 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:13:26 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:13:26 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:13:26 2012] [debug] 200 OK (0.034803s, 28.733/s).
+[Sun May 13 20:13:37 2012] [debug] GET /test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:13:37 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:13:37 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:13:37 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:13:37 2012] [debug] 200 OK (0.016062s, 62.259/s).
+[Sun May 13 20:19:12 2012] [debug] Your secret passphrase needs to be changed!!!
+[Sun May 13 20:19:12 2012] [debug] GET /test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:19:12 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:19:12 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:19:12 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:19:12 2012] [debug] 200 OK (0.156163s, 6.404/s).
+[Sun May 13 20:19:16 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:19:16 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:19:16 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:19:16 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:19:16 2012] [debug] 200 OK (0.016800s, 59.524/s).
+[Sun May 13 20:19:23 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:19:23 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:19:23 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:19:23 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:19:23 2012] [debug] 200 OK (0.015059s, 66.405/s).
+[Sun May 13 20:19:28 2012] [debug] GET /test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:19:28 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:19:28 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:19:28 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:19:28 2012] [debug] 200 OK (0.015264s, 65.514/s).
+[Sun May 13 20:24:08 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:24:08 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Sun May 13 20:24:08 2012] [debug] Rendering template "home/home.html.ep".
+[Sun May 13 20:24:08 2012] [debug] Rendering template "layouts/home.html.ep".
+[Sun May 13 20:24:08 2012] [debug] 200 OK (0.015107s, 66.194/s).
+[Sun May 13 20:24:10 2012] [debug] GET /logout (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:24:10 2012] [debug] Routing to controller "MyIMDB::Logout" and action "logout".
+[Sun May 13 20:24:10 2012] [debug] 302 Found (0.021353s, 46.832/s).
+[Sun May 13 20:24:10 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:24:10 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Sun May 13 20:24:10 2012] [debug] Rendering template "home/home.html.ep".
+[Sun May 13 20:24:10 2012] [debug] Rendering template "layouts/home.html.ep".
+[Sun May 13 20:24:10 2012] [debug] 200 OK (0.012633s, 79.158/s).
+[Sun May 13 20:24:10 2012] [debug] GET /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:24:10 2012] [debug] Rendering template "login/login.html.ep".
+[Sun May 13 20:24:11 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:24:11 2012] [debug] 200 OK (0.012974s, 77.077/s).
+[Sun May 13 20:24:13 2012] [debug] POST /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:24:13 2012] [debug] Routing to controller "MyIMDB::Login" and action "login".
+[Sun May 13 20:24:13 2012] [debug] 302 Found (0.010115s, 98.863/s).
+[Sun May 13 20:24:13 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:24:13 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:24:13 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:24:13 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:24:13 2012] [debug] 200 OK (0.013283s, 75.284/s).
+[Sun May 13 20:24:42 2012] [debug] Your secret passphrase needs to be changed!!!
+[Sun May 13 20:24:42 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:24:42 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:24:42 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:24:42 2012] [error] Can't modify single ref constructor in concatenation (.) or string at template "users/home.html.ep" line 3, near "% if( session('name') and session('name') eq $user_name ){".
+1: % layout 'default';
+2: % use Data::Dumper;\
+3: 
+4: % if( session('name') and session('name') eq $user_name ){
+5: 	% print Dumper( $user_name );
+6: 	Hi <%= session('name') %> 
+7: % }
+8: <br/>
+
+[Sun May 13 20:24:42 2012] [debug] Template "exception.development.html.ep" not found.
+[Sun May 13 20:24:42 2012] [debug] Template "exception.html.ep" not found.
+[Sun May 13 20:24:42 2012] [debug] Rendering inline template.
+[Sun May 13 20:24:42 2012] [debug] Rendering inline template.
+[Sun May 13 20:24:43 2012] [debug] 500 Internal Server Error (0.219441s, 4.557/s).
+[Sun May 13 20:24:47 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:24:47 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:24:47 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:24:47 2012] [error] Can't modify single ref constructor in concatenation (.) or string at template "users/home.html.ep" line 3, near "% if( session('name') and session('name') eq $user_name ){".
+1: % layout 'default';
+2: % use Data::Dumper;\
+3: 
+4: % if( session('name') and session('name') eq $user_name ){
+5: 	% print Dumper( $user_name );
+6: 	Hi <%= session('name') %> 
+7: % }
+8: <br/>
+
+[Sun May 13 20:24:47 2012] [debug] Template "exception.development.html.ep" not found.
+[Sun May 13 20:24:47 2012] [debug] Template "exception.html.ep" not found.
+[Sun May 13 20:24:47 2012] [debug] Rendering cached inline template.
+[Sun May 13 20:24:47 2012] [debug] Rendering cached inline template.
+[Sun May 13 20:24:47 2012] [debug] 500 Internal Server Error (0.039900s, 25.063/s).
+[Sun May 13 20:25:11 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:25:11 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:25:11 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:25:11 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:25:11 2012] [debug] 200 OK (0.025446s, 39.299/s).
+[Sun May 13 20:25:15 2012] [debug] Your secret passphrase needs to be changed!!!
+[Sun May 13 20:25:15 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:25:15 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:25:15 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:25:15 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:25:15 2012] [debug] 200 OK (0.158259s, 6.319/s).
+[Sun May 13 20:25:25 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:25:25 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:25:25 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:25:25 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:25:25 2012] [debug] 200 OK (0.032055s, 31.196/s).
+[Sun May 13 20:25:34 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:25:34 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:25:34 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:25:34 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:25:34 2012] [debug] 200 OK (0.029856s, 33.494/s).
+[Sun May 13 20:25:38 2012] [debug] Your secret passphrase needs to be changed!!!
+[Sun May 13 20:25:38 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:25:38 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:25:38 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:25:38 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:25:38 2012] [debug] 200 OK (0.167292s, 5.978/s).
+[Sun May 13 20:25:59 2012] [debug] Your secret passphrase needs to be changed!!!
+[Sun May 13 20:25:59 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:25:59 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:25:59 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:25:59 2012] [error] Global symbol "$favorited_actors" requires explicit package name at template "users/home.html.ep" line 17, near "	<ul><%= $_ %></ul>".
+12: % }
+13: 
+14: <br/><br/>
+15: 
+16: Your favorite actors are:
+17: % foreach( @{$favorited_actors} ){
+18: 	<ul><%= $_ %></ul>
+19: % }
+
+[Sun May 13 20:25:59 2012] [debug] Template "exception.development.html.ep" not found.
+[Sun May 13 20:25:59 2012] [debug] Template "exception.html.ep" not found.
+[Sun May 13 20:25:59 2012] [debug] Rendering inline template.
+[Sun May 13 20:25:59 2012] [debug] Rendering inline template.
+[Sun May 13 20:25:59 2012] [debug] 500 Internal Server Error (0.209485s, 4.774/s).
+[Sun May 13 20:26:30 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:26:30 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:26:30 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:26:30 2012] [error] Global symbol "$favorited_actors" requires explicit package name at template "users/home.html.ep" line 17, near "	<ul><%= $_ %></ul>".
+12: % }
+13: 
+14: <br/><br/>
+15: 
+16: Your favorite actors are:
+17: % foreach( $favorited_actors ){
+18: 	<ul><%= $_ %></ul>
+19: % }
+
+[Sun May 13 20:26:30 2012] [debug] Template "exception.development.html.ep" not found.
+[Sun May 13 20:26:30 2012] [debug] Template "exception.html.ep" not found.
+[Sun May 13 20:26:30 2012] [debug] Rendering cached inline template.
+[Sun May 13 20:26:30 2012] [debug] Rendering cached inline template.
+[Sun May 13 20:26:30 2012] [debug] 500 Internal Server Error (0.037337s, 26.783/s).
+[Sun May 13 20:26:35 2012] [debug] Your secret passphrase needs to be changed!!!
+[Sun May 13 20:26:35 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:26:35 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:26:35 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:26:35 2012] [error] Global symbol "$favorited_actors" requires explicit package name at template "users/home.html.ep" line 17, near "	<ul><%= $_ %></ul>".
+12: % }
+13: 
+14: <br/><br/>
+15: 
+16: Your favorite actors are:
+17: % foreach( $favorited_actors ){
+18: 	<ul><%= $_ %></ul>
+19: % }
+
+[Sun May 13 20:26:35 2012] [debug] Template "exception.development.html.ep" not found.
+[Sun May 13 20:26:35 2012] [debug] Template "exception.html.ep" not found.
+[Sun May 13 20:26:35 2012] [debug] Rendering inline template.
+[Sun May 13 20:26:35 2012] [debug] Rendering inline template.
+[Sun May 13 20:26:35 2012] [debug] 500 Internal Server Error (0.203153s, 4.922/s).
+[Sun May 13 20:26:56 2012] [debug] Your secret passphrase needs to be changed!!!
+[Sun May 13 20:26:56 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:26:56 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:26:56 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:26:56 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:26:56 2012] [debug] 200 OK (0.157450s, 6.351/s).
+[Sun May 13 20:27:07 2012] [debug] GET /test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:27:07 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:27:07 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:27:07 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:27:07 2012] [debug] 200 OK (0.023086s, 43.316/s).
+[Sun May 13 20:27:10 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:27:10 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Sun May 13 20:27:10 2012] [debug] Rendering template "home/home.html.ep".
+[Sun May 13 20:27:10 2012] [debug] Rendering template "layouts/home.html.ep".
+[Sun May 13 20:27:10 2012] [debug] 200 OK (0.032299s, 30.961/s).
+[Sun May 13 20:27:11 2012] [debug] GET /logout (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:27:11 2012] [debug] Routing to controller "MyIMDB::Logout" and action "logout".
+[Sun May 13 20:27:11 2012] [debug] 302 Found (0.003217s, 310.849/s).
+[Sun May 13 20:27:11 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:27:11 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Sun May 13 20:27:11 2012] [debug] Rendering template "home/home.html.ep".
+[Sun May 13 20:27:11 2012] [debug] Rendering template "layouts/home.html.ep".
+[Sun May 13 20:27:11 2012] [debug] 200 OK (0.012770s, 78.309/s).
+[Sun May 13 20:27:12 2012] [debug] GET /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:27:12 2012] [debug] Rendering template "login/login.html.ep".
+[Sun May 13 20:27:12 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:27:12 2012] [debug] 200 OK (0.013685s, 73.073/s).
+[Sun May 13 20:27:18 2012] [debug] POST /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:27:18 2012] [debug] Routing to controller "MyIMDB::Login" and action "login".
+[Sun May 13 20:27:18 2012] [debug] 302 Found (0.012297s, 81.321/s).
+[Sun May 13 20:27:18 2012] [debug] GET /test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:27:18 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:27:18 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:27:18 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:27:18 2012] [debug] 200 OK (0.013700s, 72.993/s).
+[Sun May 13 20:27:23 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:27:23 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:27:23 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:27:23 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:27:23 2012] [debug] 200 OK (0.020263s, 49.351/s).
+[Sun May 13 20:27:35 2012] [debug] GET /test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:27:35 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:27:35 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:27:35 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:27:35 2012] [debug] 200 OK (0.023749s, 42.107/s).
+[Sun May 13 20:32:11 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:32:11 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:32:11 2012] [debug] Rendering cached template "users/home.html.ep".
+[Sun May 13 20:32:11 2012] [debug] Rendering cached template "layouts/default.html.ep".
+[Sun May 13 20:32:11 2012] [debug] 200 OK (0.024923s, 40.124/s).
+[Sun May 13 20:56:02 2012] [info] Listening at "http://*:3000".
+[Sun May 13 20:56:08 2012] [debug] Your secret passphrase needs to be changed!!!
+[Sun May 13 20:56:08 2012] [debug] Bad signed cookie "mojolicious", possible hacking attempt.
+[Sun May 13 20:56:08 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:56:08 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:56:08 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:56:08 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:56:08 2012] [debug] 200 OK (0.162519s, 6.153/s).
+[Sun May 13 20:56:11 2012] [debug] Bad signed cookie "mojolicious", possible hacking attempt.
+[Sun May 13 20:56:11 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:56:11 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Sun May 13 20:56:11 2012] [debug] Rendering template "home/home.html.ep".
+[Sun May 13 20:56:11 2012] [debug] Rendering template "layouts/home.html.ep".
+[Sun May 13 20:56:11 2012] [debug] 200 OK (0.016399s, 60.979/s).
+[Sun May 13 20:56:14 2012] [debug] Bad signed cookie "mojolicious", possible hacking attempt.
+[Sun May 13 20:56:14 2012] [debug] GET /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:56:14 2012] [debug] Rendering template "login/login.html.ep".
+[Sun May 13 20:56:14 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:56:14 2012] [debug] 200 OK (0.013814s, 72.390/s).
+[Sun May 13 20:56:16 2012] [debug] Bad signed cookie "mojolicious", possible hacking attempt.
+[Sun May 13 20:56:16 2012] [debug] POST /login (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:56:16 2012] [debug] Routing to controller "MyIMDB::Login" and action "login".
+[Sun May 13 20:56:16 2012] [debug] 302 Found (0.016401s, 60.972/s).
+[Sun May 13 20:56:16 2012] [debug] GET /us (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Sun May 13 20:56:16 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Sun May 13 20:56:16 2012] [debug] Rendering template "users/home.html.ep".
+[Sun May 13 20:56:16 2012] [debug] Rendering template "layouts/default.html.ep".
+[Sun May 13 20:56:16 2012] [debug] 200 OK (0.021691s, 46.102/s).

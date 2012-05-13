@@ -1,6 +1,6 @@
 % layout 'default';
 
-% if( session('name') ){
+% if( session('name') and session('name') eq $user_name ){
 	Hi <%= session('name') %> 
 % }
 <br/>
