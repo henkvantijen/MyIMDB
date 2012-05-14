@@ -24,7 +24,7 @@
 	% } else {
 		You don't have any favorited actors yet!
 	% }
-% } elsif ( session('name') and session('name') ne $user_name ){
+% } else {
 	% if( scalar @{$favorited_movies}>0 ){
 		<%= $user_name %>'s favorite movies are:
 		% foreach( @{$favorited_movies} ){

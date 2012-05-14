@@ -562,3 +562,29 @@
 [Mon May 14 23:55:19 2012] [debug] Rendering cached template "users/home.html.ep".
 [Mon May 14 23:55:19 2012] [debug] Rendering cached template "layouts/default.html.ep".
 [Mon May 14 23:55:19 2012] [debug] 200 OK (0.021817s, 45.836/s).
+[Tue May 15 00:02:18 2012] [info] Listening at "http://*:3000".
+[Tue May 15 00:02:20 2012] [debug] Your secret passphrase needs to be changed!!!
+[Tue May 15 00:02:20 2012] [debug] GET /user/test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Tue May 15 00:02:20 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Tue May 15 00:02:20 2012] [debug] Rendering template "users/home.html.ep".
+[Tue May 15 00:02:20 2012] [debug] Rendering template "layouts/default.html.ep".
+[Tue May 15 00:02:20 2012] [debug] 200 OK (0.163805s, 6.105/s).
+[Tue May 15 00:02:23 2012] [debug] GET /logout (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Tue May 15 00:02:23 2012] [debug] Routing to controller "MyIMDB::Logout" and action "logout".
+[Tue May 15 00:02:23 2012] [debug] 302 Found (0.002727s, 366.703/s).
+[Tue May 15 00:02:23 2012] [debug] GET / (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Tue May 15 00:02:23 2012] [debug] Routing to controller "MyIMDB::Home" and action "home".
+[Tue May 15 00:02:23 2012] [debug] Rendering template "home/home.html.ep".
+[Tue May 15 00:02:23 2012] [debug] Rendering template "layouts/home.html.ep".
+[Tue May 15 00:02:24 2012] [debug] 200 OK (0.016116s, 62.050/s).
+[Tue May 15 00:02:27 2012] [debug] GET /user/test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Tue May 15 00:02:27 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Tue May 15 00:02:27 2012] [debug] Rendering template "users/home.html.ep".
+[Tue May 15 00:02:27 2012] [debug] Rendering template "layouts/default.html.ep".
+[Tue May 15 00:02:27 2012] [debug] 200 OK (0.033829s, 29.560/s).
+[Tue May 15 00:03:11 2012] [debug] Your secret passphrase needs to be changed!!!
+[Tue May 15 00:03:11 2012] [debug] GET /user/test2 (Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0).
+[Tue May 15 00:03:11 2012] [debug] Routing to controller "MyIMDB::Users" and action "home".
+[Tue May 15 00:03:11 2012] [debug] Rendering template "users/home.html.ep".
+[Tue May 15 00:03:11 2012] [debug] Rendering template "layouts/default.html.ep".
+[Tue May 15 00:03:11 2012] [debug] 200 OK (0.163107s, 6.131/s).
