@@ -1,17 +1,47 @@
 % layout 'default';
 
 % if( session('name') and session('name') eq $user_name ){
-	Hi <%= session('name') %> 
-% }
-<br/>
-Your favorite movies are:
-% foreach( @{$favorited_movies} ){
-	<ul><%= $_ %></ul>
-% }
+	Hi, <%= session 'name' %>!
+	
+	<br/> 
+	
+	% if( scalar @{$favorited_movies}>0  ){
+		Your favorite movies are:
+		% foreach( @{$favorited_movies} ){
+			<ul><%= $_ %></ul>
+		% }
+	% } else {
+		You don't have any favorited movies yet!
+	% }
 
-<br/><br/>
+	<br/>
 
-Your favorite actors are:
-% foreach( @{$favorited_actors} ){
-	<ul><%= $_ %></ul>
+	% if( scalar @{$favorited_actors}>0 ){
+		Your favorite actors are:
+		% foreach( @{$favorited_actors} ){
+			<ul><%= $_ %></ul>
+		% }
+	% } else {
+		You don't have any favorited actors yet!
+	% }
+% } elsif ( session('name') and session('name') ne $user_name ){
+	% if( scalar @{$favorited_movies}>0 ){
+		<%= $user_name %>'s favorite movies are:
+		% foreach( @{$favorited_movies} ){
+            <ul><%= $_ %></ul>
+        % }
+    % } else {
+        <%= $user_name %> doesn't have any favorited movies yet!
+    % }
+	
+	<br/>
+	
+	% if( scalar @{$favorited_actors}>0 ){
+		<%= $user_name %>'s favorite actors are:
+		% foreach( @{$favorited_actors} ){
+			<ul><%= $_ %></ul>
+		% } 
+	% } else {
+		<%= $user_name %> doesn't have any favorite actors yet!
+	% } 
 % }

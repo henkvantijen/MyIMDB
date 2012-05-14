@@ -37,7 +37,8 @@ sub startup {
   $r->route('/movies_set_rank')->to('movies#setRank');
   $r->route('/movies_favorited')->to('movies#markFavorite');
 
-  $r->route('/#username')->to('users#home');
+  # Users routes
+  $r->route('/user/#user_name')->to('users#home');
 }
 
 1;

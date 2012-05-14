@@ -10,7 +10,7 @@ use Data::Dumper;
 
 sub home {
 	my $self = shift;
-	my $user_name = $self->param('username');
+	my $user_name = $self->param('user_name');
 	my @favorited_movies;
 	my @favorited_actors;
 

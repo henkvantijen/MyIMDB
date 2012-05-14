@@ -152,7 +152,7 @@ CREATE TABLE `users` (
   `pass` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -161,7 +161,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'andrei','andrei','andrei@andrei.ro'),(2,'test','test','test@test.ro'),(5,'us','0b3b97fa66886c5688ee4ae80ec0c3c2','us@us.us'),(6,'test2','ad0234829205b9033196ba818f7a872b','test@test2.ds');
+INSERT INTO `users` VALUES (5,'us','0b3b97fa66886c5688ee4ae80ec0c3c2','us@us.us'),(6,'test2','ad0234829205b9033196ba818f7a872b','test@test2.ds'),(9,'a','0cc175b9c0f1b6a831c399e269772661','a@a.a');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,4 +225,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-05-10 23:47:00
+-- Dump completed on 2012-05-14 23:57:06

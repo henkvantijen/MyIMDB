@@ -12,7 +12,7 @@
 
 % my $user_name;
 % if( session ('name') ){
-%	$user_name = session('name');
+%	$user_name = session ('name');
 % }
 
 % if ($user_name and $movie->{rated} eq 'y') {
