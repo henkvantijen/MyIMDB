@@ -85,7 +85,7 @@ sub setRank {
 		$user_movie->update();
 	}
 
-	$self->redirect_to( "movies/details/$movie_id" );
+	$self->redirect_to( "movie/$movie_id" );
 }
 
 sub markFavorite {
@@ -108,7 +108,7 @@ sub markFavorite {
 		$user_movie->update();
 	}
 
-	$self->redirect_to( "movies/details/$movie_id" );
+	$self->redirect_to( "movie/$movie_id" );
 }
 
 1;

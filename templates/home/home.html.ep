@@ -3,7 +3,7 @@
 <h1>home</h1>
 
 % if (session 'name') {
-	<a href='/user/<%= session 'name' %>'>Your Homepage</a> or <a href='/logout'>Sign-Out</a>
+	<a href='/user/<%= session 'name' %>'>Homepage</a> <a href='/view_basket'>Basket</a> <a href='/logout'>Sign-Out</a>
 % } else {
 	<a href="/login">Sign-In</a> or <a href='/join'>Join us!</a>
 % }

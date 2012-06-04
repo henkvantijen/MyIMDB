@@ -8,7 +8,7 @@
 	  <div id="footer">
 		   </br> </br> 
 		   % if( session ('name') ){
-		   		<a href='/'>Home</a> <a href='/user/<%= session ('name') %>'>Your Homepage</a> <a href='/logout'>Sign-Out</a>
+		   <a href='/'>Search</a> <a href='/user/<%= session ('name') %>'>Homepage</a> <a href='/logout'>Sign-Out</a> <a href='/view_basket'>Basket</a>
 		   % } else {
 		   		<a href='/'>Home</a> <a href='/login'>Sign-In</a> <a href='/join'>Join us</a>
 		   % }
