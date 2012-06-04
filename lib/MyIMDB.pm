@@ -28,12 +28,12 @@ sub startup {
   $r->route('/join')->via('post')->to('join#join');
 
   # Actors routes
-  $r->route('/actors/details/:id')->to('actors#details', id => qr/\d+/);
-  $r->route('/actors')->to('actors#list');
-  $r->route('/actors_favorited')->to('actors#markFavorite');
+  my $actor = $r->bridge('/actors/:id')->to('actors#details', id=>[0,9]);
+  $actor->route('/')->to('actors#details');
+  $actor->route('/mark')->to('actors#markFavorite');
 
   # Movies routes
-  my $movie = $r->bridge('/movie/:id')->to('movies#details', id=>[0,9]);
+  my $movie = $r->bridge('/movies/:id')->to('movies#details', id=>[0,9]);
   $movie->route('/')->to('movies#details');
   $movie->route('/rate')->to('movies#setRank');
   $movie->route('/mark')->to('movies#markFavorite');

@@ -9,7 +9,7 @@
 	<tr><td>Rating: </td><td> <%= $movie->{rating} %> </td></tr>
 </table>
 <br/>
-<a href='/movie/<%= $movie->id %>/buy'>Buy</a>
+<a href='/movies/<%= $movie->id %>/buy'>Buy</a>
 <br/>
 
 % my $user_name;
@@ -20,7 +20,7 @@
 % if ($user_name and $movie->{rated} eq 'y') {
 	You've already rated this movie
 % } elsif ($user_name) {
-	%= form_for "/movie/$movie/rate" => (method => 'POST') => begin 
+	%= form_for "/movies/$movie/rate" => (method => 'POST') => begin 
 		<table>	
 			<tr>
 				<td>Set rating:</td>
@@ -35,7 +35,7 @@
 % if ($user_name and $movie->{favorited} eq 'y') {
 	Movie already marked as 'favorite' 
 % } elsif ($user_name) {
-	%= form_for "/movie/$movie/mark" => (method => 'POST') => begin
+	%= form_for "/movies/$movie/mark" => (method => 'POST') => begin
 		Mark as favorite: 
 		%= hidden_field id => $movie->id();
 		%= submit_button 'Mark'

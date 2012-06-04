@@ -64,7 +64,7 @@ sub markFavorite {
 		$user_actor->update();
 	}
 	
-	$self->redirect_to( "actors/details/$actor_id" );
+	$self->redirect_to( "actors/$actor_id" );
 }
 
 1;

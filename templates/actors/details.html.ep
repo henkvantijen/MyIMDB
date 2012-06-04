@@ -16,7 +16,7 @@ Birth date: <%= $actor->bdate() %>
 % if ($user_name and $actor->{favorited} eq 'y') {
     Actor already marked as 'favorite'
 % } elsif ($user_name) {
-    %= form_for '/actors_favorited' => (method => 'POST') => begin
+    %= form_for "/actors/$actor/mark" => (method => 'POST') => begin
         Mark as favorite:
         %= hidden_field id => $actor->id();
         %= submit_button 'Mark'

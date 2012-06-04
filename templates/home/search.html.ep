@@ -20,7 +20,7 @@
 		     %= $_->name();
 		</td>
 		<td>
-			<a href="/<%=$return_result->{search_type}%>/details/<%= $_->id() %>">View details</a> 
+			<a href="/<%=$return_result->{search_type}%>/<%= $_->id() %>">View details</a> 
 		</td>
 	</tr>
     % }
@@ -52,7 +52,7 @@
 	  				%= $_->name();
 				</td>
 				<td>
-					<a href="/movies/details/<%= $_->id() %>">View Details</a>
+					<a href="/movie/<%= $_->id() %>">View Details</a>
 				</td>
       		</tr>
     	% }
