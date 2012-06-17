@@ -28,20 +28,23 @@ sub startup {
   $r->route('/join')->via('post')->to('join#join');
 
   # Actors routes
-  my $actor = $r->bridge('/actors/:id')->to('actors#details', id=>[0,9]);
+  my $actor = $r->route('/actors/:id')->to('actors#details');
   $actor->route('/')->to('actors#details');
   $actor->route('/mark')->to('actors#markFavorite');
 
   # Movies routes
-  my $movie = $r->bridge('/movies/:id')->to('movies#details', id=>[0,9]);
-  $movie->route('/')->to('movies#details');
-  $movie->route('/rate')->to('movies#setRank');
+  my $movie = $r->route('/movies/:id')->to(controller => 'movies');
+  $movie->route('/')->to(action => 'details');
+  $movie->route('/rate')->to(action => 'setRate');
   $movie->route('/mark')->to('movies#markFavorite');
   $movie->route('/buy')->to('basket#buyMovie');
 
   # Users routes
   $r->route('/user/#user_name')->to('users#home');
   $r->route('/view_basket')->to('basket#view');
+
+  # Error routes
+  $r->route('/404')->to(template => 'errors/404');
 }
 
 1;

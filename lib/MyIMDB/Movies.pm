@@ -12,6 +12,10 @@ sub details {
 
 	my $movie_id = $self->param('id');
 
+	if( $movie_id !~ /\d+/ ){
+		return $self->redirect_to('/404');
+	}
+
 	my $movie = MyIMDB::Models::Movies->retrieve($movie_id);
 
 	my $rating = $movie->rating();
@@ -49,7 +53,7 @@ sub details {
 	$self->stash( movie => $movie );
 }
 
-sub setRank {
+sub setRate {
 	my $self = shift;
 
 	my $new_rating = $self->param('rating');
@@ -85,7 +89,7 @@ sub setRank {
 		$user_movie->update();
 	}
 
-	$self->redirect_to( "movie/$movie_id" );
+	$self->redirect_to( "movies/$movie_id" );
 }
 
 sub markFavorite {
@@ -108,7 +112,7 @@ sub markFavorite {
 		$user_movie->update();
 	}
 
-	$self->redirect_to( "movie/$movie_id" );
+	$self->redirect_to( "movies/$movie_id" );
 }
 
 1;

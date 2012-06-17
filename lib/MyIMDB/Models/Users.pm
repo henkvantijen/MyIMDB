@@ -26,9 +26,6 @@ sub validate {
 	my $self = shift;
 	my ($user, $pass, $pass2, $email) = @_;
 
-	use Data::Dumper;
-	print Dumper ($user, $pass, $pass2, $email);
-
 	return 'username field must not be blank' unless $user and length $user;
 	
 	return 'this user already exists'

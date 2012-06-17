@@ -1,0 +1,28 @@
+% layout 'default';
+% title 'Basket';
+% use Data::Dumper;
+
+% my $basket = session 'basket';
+
+Hello <%= session 'name' %>
+</br>
+% print Dumper( $basket );
+
+% if( scalar( keys %{$basket} == 0 ) ){
+	You have no movies in basket yet
+%  } else {
+		</br>
+		This is your basket's content
+		</br>
+		<table border='1'>
+			<th>Movie</th>
+			<th>Quantity</th>
+			% foreach( keys %{$basket} ){
+				<tr>
+					<td><%= $basket->{$_}->{name} %></td>
+					<td><%= $basket->{$_}->{quantity} %></td>
+				</tr>
+			% }
+		</table>
+% }
+	

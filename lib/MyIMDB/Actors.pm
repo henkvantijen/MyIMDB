@@ -22,6 +22,10 @@ sub details {
 
 	my $actor_id = $self->param('id');
 
+	if( $actor_id !~ /\d+/ ){
+		return $self->redirect_to('/404');
+	}
+
 	my $actor = MyIMDB::Models::Actors->retrieve($actor_id);
 
 	if( $self->session('name') ){
