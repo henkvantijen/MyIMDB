@@ -41,7 +41,10 @@ sub startup {
 
   # Users routes
   $r->route('/user/#user_name')->to('users#home');
-  $r->route('/view_basket')->to('basket#view');
+  $r->route('/basket/view')->to('basket#view');
+  $r->route('/basket/update')->to('basket#update');
+  $r->route('/basket/empty')->to('basket#empty');
+  $r->route('/basket/delete/:id')->to('basket#delete');
 
   # Error routes
   $r->route('/404')->to(template => 'errors/404');

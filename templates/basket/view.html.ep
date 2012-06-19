@@ -6,7 +6,8 @@
 
 Hello <%= session 'name' %>
 </br>
-% print Dumper( $basket );
+%# print Dumper(session('basket'));
+
 
 % if( scalar( keys %{$basket} == 0 ) ){
 	You have no movies in basket yet
@@ -14,15 +15,22 @@ Hello <%= session 'name' %>
 		</br>
 		This is your basket's content
 		</br>
-		<table border='1'>
-			<th>Movie</th>
-			<th>Quantity</th>
-			% foreach( keys %{$basket} ){
-				<tr>
-					<td><%= $basket->{$_}->{name} %></td>
-					<td><%= $basket->{$_}->{quantity} %></td>
-				</tr>
-			% }
-		</table>
+		%= form_for 'update' => (method => 'POST') => begin
+			<table border='1'>
+				<th>Movie</th>
+				<th>Quantity</th>
+				<th>Remove</th>
+				% foreach( keys %{$basket} ){
+					<tr>
+						<td><a href="/movies/<%= $basket->{$_}->{id} %>"> <%= $basket->{$_}->{name} %> </a> </td>
+						<td><input name='quantity' value=<%=$basket->{$_}->{quantity} %> size = '5'></td>
+						<td><a href="delete/<%= $basket->{$_}->{id} %>">Delete</a></td>
+					</tr>
+				% }
+			</table>
+			%= submit_button 'Update'
+		% end
+		
+		<a href="/basket/empty">Empty Basket</a> 
 % }
 	
