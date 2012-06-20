@@ -1,0 +1,12 @@
+% layout 'default';
+% title 'Checkout';
+
+% my $user = stash('user');
+Your details </br>
+
+%= form_for 'send' => (method => 'POST') => begin
+	Name: <input type='text' name='name' value='<%= $user->name %>' /> </br>
+	Email: <input type='text' name='email' value='<%= $user->email %>' /> </br>
+	%= submit_button 'Send'
+% end
+

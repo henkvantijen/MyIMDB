@@ -6,8 +6,6 @@
 
 Hello <%= session 'name' %>
 </br>
-%# print Dumper(session('basket'));
-
 
 % if( scalar( keys %{$basket} == 0 ) ){
 	You have no movies in basket yet
@@ -31,6 +29,8 @@ Hello <%= session 'name' %>
 			%= submit_button 'Update'
 		% end
 		
-		<a href="/basket/empty">Empty Basket</a> 
+		<a href='empty'>Empty Basket</a> 
+		</br>
+	    <a href='checkout'>Checkout</a>	
 % }
 	

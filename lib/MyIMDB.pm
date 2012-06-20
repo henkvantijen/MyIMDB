@@ -41,10 +41,15 @@ sub startup {
 
   # Users routes
   $r->route('/user/#user_name')->to('users#home');
-  $r->route('/basket/view')->to('basket#view');
-  $r->route('/basket/update')->to('basket#update');
-  $r->route('/basket/empty')->to('basket#empty');
-  $r->route('/basket/delete/:id')->to('basket#delete');
+
+  # Basket routes
+  my $basket = $r->route('/basket')->to(controller => 'basket');
+  $basket->route('/view')->to(action => 'view');
+  $basket->route('/update')->to(action => 'update');
+  $basket->route('/empty')->to(action => 'empty');
+  $basket->route('/delete/:id')->to(action => 'delete');
+  $basket->route('/checkout')->to(action => 'checkout');
+  $basket->route('/send')->to(action =>'sendEmail');
 
   # Error routes
   $r->route('/404')->to(template => 'errors/404');
