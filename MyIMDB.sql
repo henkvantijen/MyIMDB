@@ -41,6 +41,30 @@ INSERT INTO `actors` VALUES (0,'Brad Pitt','1963-12-18'),(1,'Edward Norton','196
 UNLOCK TABLES;
 
 --
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comments` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `comment` char(150) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,'test test test test');
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `genres`
 --
 
@@ -78,7 +102,7 @@ CREATE TABLE `movies` (
   `duration` int(255) DEFAULT NULL,
   `rating` smallint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -87,7 +111,7 @@ CREATE TABLE `movies` (
 
 LOCK TABLES `movies` WRITE;
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-INSERT INTO `movies` VALUES (0,'Fight Club','1999-10-15',139,2),(1,'Seven','1995-09-22',127,1);
+INSERT INTO `movies` VALUES (0,'Fight Club','1999-10-15',139,3),(1,'Seven','1995-09-22',127,3),(10,'test',NULL,NULL,NULL),(99999,'99',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `movies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,6 +137,30 @@ LOCK TABLES `movies_actors` WRITE;
 /*!40000 ALTER TABLE `movies_actors` DISABLE KEYS */;
 INSERT INTO `movies_actors` VALUES (0,0),(0,1),(0,2),(1,3),(1,5);
 /*!40000 ALTER TABLE `movies_actors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `movies_comments`
+--
+
+DROP TABLE IF EXISTS `movies_comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `movies_comments` (
+  `movie_id` int(100) NOT NULL DEFAULT '0',
+  `comment_id` int(100) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`movie_id`,`comment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `movies_comments`
+--
+
+LOCK TABLES `movies_comments` WRITE;
+/*!40000 ALTER TABLE `movies_comments` DISABLE KEYS */;
+INSERT INTO `movies_comments` VALUES (1,1);
+/*!40000 ALTER TABLE `movies_comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -186,8 +234,32 @@ CREATE TABLE `users_actors` (
 
 LOCK TABLES `users_actors` WRITE;
 /*!40000 ALTER TABLE `users_actors` DISABLE KEYS */;
-INSERT INTO `users_actors` VALUES (6,0,'y');
+INSERT INTO `users_actors` VALUES (5,0,'y'),(6,0,'y');
 /*!40000 ALTER TABLE `users_actors` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users_comments`
+--
+
+DROP TABLE IF EXISTS `users_comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users_comments` (
+  `user_id` int(100) NOT NULL DEFAULT '0',
+  `comment_id` int(100) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`user_id`,`comment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users_comments`
+--
+
+LOCK TABLES `users_comments` WRITE;
+/*!40000 ALTER TABLE `users_comments` DISABLE KEYS */;
+INSERT INTO `users_comments` VALUES (5,1);
+/*!40000 ALTER TABLE `users_comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -212,7 +284,7 @@ CREATE TABLE `users_movies` (
 
 LOCK TABLES `users_movies` WRITE;
 /*!40000 ALTER TABLE `users_movies` DISABLE KEYS */;
-INSERT INTO `users_movies` VALUES (5,0,'y','y'),(5,1,NULL,'y'),(6,1,NULL,'y');
+INSERT INTO `users_movies` VALUES (5,0,'y','y');
 /*!40000 ALTER TABLE `users_movies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -225,4 +297,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-05-14 23:57:06
+-- Dump completed on 2012-06-20 23:55:31

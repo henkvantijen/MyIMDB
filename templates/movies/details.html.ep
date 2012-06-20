@@ -41,3 +41,7 @@
 		%= submit_button 'Mark'
 	% end
 % } 
+
+% foreach( $movie->comments ){
+	<p><%= $_->comment_id->comment %></p>
+% }
