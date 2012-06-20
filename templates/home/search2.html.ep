@@ -1,0 +1,10 @@
+% layout 'default';
+% title 'search';
+% use Data::Dumper;
+%= javascript '/sorttable.js'
+
+<h2>Search</h2>
+
+% if( $search_type =~ /actors|movies/ ){
+	You've searched in <i><%= $search_type %></i> for: <i><%= $$search_query || 'no query specified' %></i>
+% }  

@@ -17,6 +17,7 @@ sub startup {
   # Home page routes
   $r->route('/')->to('home#home');
   $r->route('/home/search')->to('home#search');
+  $r->route('/home/search2')->to('home#search2');
 
   # Login and logout routes
   $r->route('/login')->via('get')->to( template => 'login/login' );
