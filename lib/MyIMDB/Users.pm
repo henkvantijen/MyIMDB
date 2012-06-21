@@ -10,7 +10,12 @@ use Data::Dumper;
 
 sub home {
 	my $self = shift;
+
+	# I'm gettin the user name from the URL 
+	# because visitors and also users can 
+	# view user's profiles
 	my $user_name = $self->param('user_name');
+
 	my @favorited_movies;
 	my @favorited_actors;
 
@@ -27,14 +32,18 @@ sub home {
 	foreach( $user->movies ){
 		#if the movie is marked as favorited push it into @favorited_movies 
 		if( $_->favorited ){
-			push( @favorited_movies, $_->movie_id->name );
+			push( @favorited_movies, $_ );
 		}
+	}
+
+	foreach( @favorited_movies ){
+		print Dumper( $_->movie_id."\t".$_->movie_id->name);
 	}
 
 	#for favorited actors it's the same as for favorited movies	
 	foreach( $user->actors ){
 		if( $_->favorited ){
-			push( @favorited_actors, $_->actor_id->name );
+			push( @favorited_actors, $_ );
 		}
 	}
 

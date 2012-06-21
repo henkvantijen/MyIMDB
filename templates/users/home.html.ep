@@ -1,46 +1,49 @@
 % layout 'default';
+% title "$user_name Home";
 
 % if( session('name') and session('name') eq $user_name ){
-	Hi, <%= session 'name' %>!
-	
-	<br/> 
-	
-	% if( scalar @{$favorited_movies}>0  ){
+	Hi, <%= session 'name' %>!</br>
+		
+	% if( scalar @$favorited_movies > 0  ){
 		Your favorite movies are:
-		% foreach( @{$favorited_movies} ){
-			<ul><%= $_ %></ul>
+		<ul>
+		% foreach( @$favorited_movies ){
+			<li><a href="/movies/<%= $_->movie_id %>"><%= $_->movie_id->name %></a></li>
 		% }
+		</ul>
 	% } else {
 		You don't have any favorited movies yet!
 	% }
 
-	<br/>
-
-	% if( scalar @{$favorited_actors}>0 ){
+	% if( scalar @$favorited_actors > 0 ){
 		Your favorite actors are:
-		% foreach( @{$favorited_actors} ){
-			<ul><%= $_ %></ul>
+		<ul>
+		% foreach( @$favorited_actors ){
+			<li><a href="/actors/<%= $_->actor_id %>"><%= $_->actor_id->name %></ul></li>
 		% }
+		</ul>
 	% } else {
 		You don't have any favorited actors yet!
 	% }
 % } else {
-	% if( scalar @{$favorited_movies}>0 ){
+	% if( scalar @$favorited_movies > 0 ){
 		<%= $user_name %>'s favorite movies are:
-		% foreach( @{$favorited_movies} ){
-            <ul><%= $_ %></ul>
-        % }
+		<ul>
+		% foreach( @$favorited_movies ){
+			<li><a href="/movies/<%= $_->movie_id %>"><%= $_->movie_id->name %></a></li>
+		% }
+		</ul>
     % } else {
         <%= $user_name %> doesn't have any favorited movies yet!
     % }
 	
-	<br/>
-	
-	% if( scalar @{$favorited_actors}>0 ){
+	% if( scalar @$favorited_actors > 0 ){
 		<%= $user_name %>'s favorite actors are:
-		% foreach( @{$favorited_actors} ){
-			<ul><%= $_ %></ul>
+		<ul>
+		% foreach( @$favorited_actors ){
+			<li><a href="/actors/<%= $_->actor_id %>"><%= $_->actor_id->name %></ul></li>
 		% } 
+		</ul>
 	% } else {
 		<%= $user_name %> doesn't have any favorite actors yet!
 	% } 
