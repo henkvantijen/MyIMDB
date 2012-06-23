@@ -9,7 +9,7 @@ __PACKAGE__->set_up_table('users');
 
 __PACKAGE__->has_many( movies => 'MyIMDB::Models::UsersMovies' );
 __PACKAGE__->has_many( actors => 'MyIMDB::Models::UsersActors' );
-__PACKAGE__->has_many( comments => 'MyIMDB::Models::UsersComments' );
+__PACKAGE__->has_many( comments => 'MyIMDB::Models::MoviesCommentsUsers' );
 
 
 __PACKAGE__->set_sql( login_count => qq{

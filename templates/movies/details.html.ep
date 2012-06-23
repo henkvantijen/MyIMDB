@@ -41,7 +41,10 @@
 		%= submit_button 'Mark'
 	% end
 % } 
-
-% foreach( $movie->comments ){
-	<p><%= $_->comment_id->comment %></p>
+</br>
+Comments:
+<ul>
+% foreach( $movie->users_comments ){
+	<li><a href="/user/<%= $_->user_id->name %>"><%= $_->user_id->name %></a> : <%= $_->comment_id->comment %></li>
 % }
+</ul>

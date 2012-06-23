@@ -48,7 +48,7 @@ sub details {
 				$movie->{favorited} = $user_movie->favorited();
 			}
 		}
-	}
+	}	
 
 	$self->stash( movie => $movie );
 }
