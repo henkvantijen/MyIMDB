@@ -36,8 +36,9 @@ sub startup {
   my $movie = $r->route('/movies/:id')->to(controller => 'movies');
   $movie->route('/')->to(action => 'details');
   $movie->route('/rate')->to(action => 'setRate');
-  $movie->route('/mark')->to('movies#markFavorite');
+  $movie->route('/mark')->to(action => 'markFavorite');
   $movie->route('/buy')->to('basket#buyMovie');
+  $movie->route('/comment')->to(action => 'comment');
 
   # Users routes
   $r->route('/user/#user_name')->to('users#home');

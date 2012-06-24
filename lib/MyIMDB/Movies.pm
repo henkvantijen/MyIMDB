@@ -115,4 +115,15 @@ sub markFavorite {
 	$self->redirect_to( "movies/$movie_id" );
 }
 
+sub comment {
+	my $self = shift;
+
+	my $movie_id = $self->param('id');
+	my $comment = $self->param('comment');
+
+
+
+	$self->redirect_to( "movies/$movie_id" );	
+}
+
 1;

@@ -37,14 +37,27 @@
 % } elsif ($user_name) {
 	%= form_for "/movies/$movie/mark" => (method => 'POST') => begin
 		Mark as favorite: 
-		%= hidden_field id => $movie->id();
 		%= submit_button 'Mark'
 	% end
 % } 
 </br>
-Comments:
-<ul>
-% foreach( $movie->users_comments ){
-	<li><a href="/user/<%= $_->user_id->name %>"><%= $_->user_id->name %></a> : <%= $_->comment_id->comment %></li>
+% if( scalar($movie->users_comments) > 0  ){
+	Comments
+	<ul>
+	% foreach( $movie->users_comments ){
+		% my $name = $_->user_id->name;
+		<li><%= link_to url_for($name)->url_unescape => "/user/$name" %> : <%= $_->comment_id->comment %></li> 
+	% }
+	</ul>
+% } else {
+	Be the first to comment!
 % }
-</ul>
+
+% if( $user_name ){
+	Leave a comment:
+	%= form_for "/movies/$movie/comment" => (method => 'POST') => begin
+		%= input_tag 'comment', maxlength=>'150', size=>'30' 
+		%= submit_button 'Comment'
+	% end
+	
+% }	
