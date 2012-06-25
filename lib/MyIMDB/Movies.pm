@@ -48,7 +48,7 @@ sub details {
 				$movie->{favorited} = $user_movie->favorited();
 			}
 		}
-	}	
+	}
 
 	$self->stash( movie => $movie );
 }
@@ -121,7 +121,39 @@ sub comment {
 	my $movie_id = $self->param('id');
 	my $comment = $self->param('comment');
 
+	my $user = MyIMDB::Models::Users->retrieve( name => $self->session('name') );
+	my $user_id = $user->id();
 
+	# For tables with multi-column primary keys you need to supply all the key values, 
+	# either in the arguments to the insert() method, 
+	# or by setting the values in a before_create trigger.
+	# 
+	# the definition of movies_users_comments table is 
+	# 
+	# +------------+-----------+------+-----+---------+----------------+
+	# | Field      | Type      | Null | Key | Default | Extra          |
+	# +------------+-----------+------+-----+---------+----------------+
+	# | movie_id   | int(100)  | NO   | PRI | 0       |                |
+	# | user_id    | int(100)  | NO   | PRI | 0       |                |
+	# | comment_id | int(100)  | NO   | PRI | NULL    | auto_increment |
+	# | comment    | char(150) | YES  |     | NULL    |                |
+	# +------------+-----------+------+-----+---------+----------------+
+	#
+	# Unfortunately I coudn't set up the before_create trigger properly
+	# so I've improvised on the spot
+
+	my @all_rows = MyIMDB::Models::MoviesUsersComments->retrieve_all;
+	my $last_row = pop @all_rows;
+	my $last_comment_id = $last_row->comment_id;
+	my $new_comment_id = $last_comment_id + 1;
+
+	
+	MyIMDB::Models::MoviesUsersComments->insert({
+		movie_id => $movie_id,
+		user_id => $user_id,
+		#comment_id => $new_comment_id,
+		comment => $comment	
+	});
 
 	$self->redirect_to( "movies/$movie_id" );	
 }

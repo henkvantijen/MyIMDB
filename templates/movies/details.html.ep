@@ -46,7 +46,7 @@
 	<ul>
 	% foreach( $movie->users_comments ){
 		% my $name = $_->user_id->name;
-		<li><%= link_to url_for($name)->url_unescape => "/user/$name" %> : <%= $_->comment_id->comment %></li> 
+		<li><%= link_to url_for($name)->url_unescape => "/user/$name" %> : <%= $_->comment %></li> 
 	% }
 	</ul>
 % } else {

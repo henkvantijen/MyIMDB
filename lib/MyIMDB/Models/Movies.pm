@@ -9,6 +9,6 @@ __PACKAGE__->set_up_table('movies');
 
 __PACKAGE__->has_many( genres => 'MyIMDB::Models::MoviesGenres' );
 __PACKAGE__->has_many( users => 'MyIMDB::Models::UsersMovies' );
-__PACKAGE__->has_many( users_comments => 'MyIMDB::Models::MoviesCommentsUsers' );
+__PACKAGE__->has_many( users_comments => 'MyIMDB::Models::MoviesUsersComments' );
 
 1;
