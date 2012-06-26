@@ -57,6 +57,9 @@ sub startup {
   $admin->route('/login')->via('get')->to(template => 'admins/login');
   $admin->route('/login')->via('post')->to(action => 'login');
   $admin->route('/#admin_name')->to(action => 'home');
+  $admin->route('/users/all')->to(action => 'allUsers');
+  $admin->route('/users/:id/delete')->to(action => 'deleteUser');
+  $admin->route('/users/search')->to(action => 'searchUsers');
 
   # Error routes
   $r->route('/404')->to(template => 'errors/404');

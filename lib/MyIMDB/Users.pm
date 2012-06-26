@@ -12,10 +12,11 @@ sub home {
 	my $self = shift;
 
 	# I'm gettin the user name from the URL 
-	# because visitors and other  users can 
-	# view user's profiles
+	# because visitors and other loged users can 
+	# view this user's profiles
 	my $user_name = $self->param('user_name');
 
+	# these two arrays will contain object instances from movies and actors table
 	my @favorited_movies;
 	my @favorited_actors;
 
@@ -23,7 +24,7 @@ sub home {
 
 	#iterate through all the movies from users_movies table for this user
 	foreach( $user->movies ){
-		#if the movie is marked as favorited push it into @favorited_movies 
+		#if the movie is marked as favorited push the object into @favorited_movies 
 		if( $_->favorited ){
 			push( @favorited_movies, $_ );
 		}

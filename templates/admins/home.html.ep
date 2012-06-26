@@ -1,7 +1,14 @@
 % layout 'default';
 
 % if( session('admin_name') ){
-	Hi, <%= session 'admin_name'%>
+	Hi, <%= session 'admin_name'%></br>
+
+	<h3>User Admin</h3>
+	<a href="/admin/users/all">List all users</a> or </br></br>
+	%= form_for '/admin/users/search' => (method => 'POST') => begin
+		%= text_field 'name' 
+		%= submit_button 'Search'
+	% end
 % } else {
 	<p>you are not welcomed here</p>
 % }
