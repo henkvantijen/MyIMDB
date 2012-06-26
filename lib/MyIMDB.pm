@@ -52,6 +52,12 @@ sub startup {
   $basket->route('/checkout')->to(action => 'checkout');
   $basket->route('/send')->to(action =>'sendEmail');
 
+  # Admin routes
+  my $admin = $r->route('/admin')->to(controller => 'admins');
+  $admin->route('/login')->via('get')->to(template => 'admins/login');
+  $admin->route('/login')->via('post')->to(action => 'login');
+  $admin->route('/#admin_name')->to(action => 'home');
+
   # Error routes
   $r->route('/404')->to(template => 'errors/404');
 }

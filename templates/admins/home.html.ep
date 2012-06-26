@@ -1,0 +1,7 @@
+% layout 'default';
+
+% if( session('admin_name') ){
+	Hi, <%= session 'admin_name'%>
+% } else {
+	<p>you are not welcomed here</p>
+% }

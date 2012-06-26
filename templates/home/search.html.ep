@@ -4,14 +4,34 @@
 
 <h2>Search</h2>
 
-% if( $search_type =~ /actors|movies/ ){
-	You've searched in <%= t i => $search_type %>  for: <%= t i => $$search_query || 'no query specified' %></br>  
+% if( $search_type =~ /actors/ ){
+	You've searched in <i>actors</i> for: <%= t i => $$search_query || 'no query specified' %></br>
 
 	<i>Hint: click on the column name to sort</i>
 	<table class="sortable" border="1">
 		<th>Name</th>
+		<th>Birth Date</th>
 		% foreach( @$search_result ){
-			<tr><td><%= link_to url_for($_->name)->url_unescape => "/$search_type/$_" %></td></tr>
+			<tr>
+				<td><%= link_to url_for($_->name)->url_unescape => "/actors/$_" %></td>
+				<td><%= $_->bdate %></td>
+			</tr>
+		% }
+		</table>
+% } elsif( $search_type =~ /movies/ ){
+	You've searched in <i>movies</i> for: <%= t i => $$search_query || 'no query specified' %></br>  
+
+	<i>Hint: click on the column name to sort</i>
+	<table class="sortable" border="1">
+		<th>Name</th>
+		<th>Launch Date</th>
+		<th>Rating</th>
+		% foreach( @$search_result ){
+			<tr>	
+				<td><%= link_to url_for($_->name)->url_unescape => "/$search_type/$_" %></td>
+				<td><%= $_->launch_date %></td>
+				<td><%= $_->rating %></td> 
+			</tr>
 		% }
 	</table>
 
@@ -30,4 +50,4 @@
 		<li><%= link_to url_for($_->name)->url_unescape => "/movies/$_" %></li>
 	% }
 	</ul>
-%} 
+% } 
