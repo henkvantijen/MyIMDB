@@ -42,6 +42,17 @@ sub home {
 				  favorited_actors => \@favorited_actors,
 	);
 		
-} 
+}
+
+sub auth {
+	my $self = shift;
+
+	if( $self->session('name') ){
+			return;
+	}
+
+	$self->flash(login => 'You have to login first');
+	$self->redirect_to('/login');
+}
 
 1;

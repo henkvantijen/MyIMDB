@@ -5,7 +5,7 @@
 	Sorry, invalid username/password combination
 % }
 
-%= form_for 'login' => (method => 'POST') => begin
+%= form_for 'admin_login' => (method => 'POST') => begin
 	<table>
 		<tr><td>Username:</td><td><%= text_field 'name' %></td></tr>
 		<tr><td>Password:</td><td><%= password_field 'pwd' %></td></tr>

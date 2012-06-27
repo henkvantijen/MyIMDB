@@ -28,17 +28,19 @@ sub startup {
   $r->route('/join')->via('post')->to('join#join');
 
   # Actors routes
-  my $actor = $r->route('/actors/:id')->to('actors#details');
-  $actor->route('/')->to('actors#details');
-  $actor->route('/mark')->to('actors#markFavorite');
+  my $actor = $r->route('/actors/:id')->to(controller => 'actors');
+  $actor->route('/')->to(action => 'details');
+  $actor->post('/mark')->to(action => 'markFavorite');
 
   # Movies routes
+
+  #my $movie = $r->bridge->to('users#auth')->route('/movies/:id')->to(controller => 'movies');
   my $movie = $r->route('/movies/:id')->to(controller => 'movies');
   $movie->route('/')->to(action => 'details');
-  $movie->route('/rate')->to(action => 'setRate');
-  $movie->route('/mark')->to(action => 'markFavorite');
+  $movie->post('/rate')->to(action => 'setRate');
+  $movie->post('/mark')->to(action => 'markFavorite');
   $movie->route('/buy')->to('basket#buyMovie');
-  $movie->route('/comment')->to(action => 'comment');
+  $movie->post('/comment')->to(action => 'comment');
 
   # Users routes
   $r->route('/user/#user_name')->to('users#home');
@@ -53,10 +55,18 @@ sub startup {
   $basket->route('/send')->to(action =>'sendEmail');
 
   # Admin routes
-  my $admin = $r->route('/admin')->to(controller => 'admins');
-  $admin->route('/login')->via('get')->to(template => 'admins/login');
-  $admin->route('/login')->via('post')->to(action => 'login');
-  $admin->route('/#admin_name')->to(action => 'home');
+  #my $admin = $r->route('/admin')->to(controller => 'admins');
+  #$admin->route('/login')->via('get')->to(template => 'admins/login');
+  #$admin->route('/login')->via('post')->to(action => 'login');
+
+  $r->route('/admin_login')->via('get')->to(template => 'admins/login');
+  $r->route('/admin_login')->via('post')->to('admins#login');
+
+  #my $admin = $r->under('/admin');
+  my $admin = $r->bridge('/admin')->to('admins#auth');
+  $admin->route('/')->to(controller => 'admins');
+  #$admin->route('/')->to(controller => 'admins');
+  $admin->route('/#admin_name')->to('admins#home');
   $admin->route('/users/all')->to(action => 'allUsers');
   $admin->route('/users/:id/delete')->to(action => 'deleteUser');
   $admin->route('/users/search')->to(action => 'searchUsers');

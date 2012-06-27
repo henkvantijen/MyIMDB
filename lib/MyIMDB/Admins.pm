@@ -18,6 +18,7 @@ sub login {
 
 	if( MyIMDB::Models::Admins->sql_login_count->select_val($admin_name, b($self->param('pwd'))->md5_sum) == 1 ){
 		$self->session( admin_name => $admin_name );
+		print Dumper("in login, placed admin name in session\n");
 		return $self->redirect_to( "/admin/$admin_name" );
 	}
 
@@ -27,6 +28,21 @@ sub login {
 sub home {
 	my $self = shift;
 
+}
+
+sub auth {
+	my $self = shift;
+
+	print Dumper( "in admins#auth");
+
+	if( $self->session('admin_name') ){
+			print Dumper('checking session for admin name');
+			print Dumper($self->session('admin_name'));
+			return 1;
+	}
+	
+	print Dumper('in afara if-ului...if you see this...smth is very wrong');
+	$self->redirect_to('/login');
 }
 
 sub allUsers {
