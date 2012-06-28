@@ -1,6 +1,8 @@
 % layout 'default';
 % title 'Admin Log-in';
 
+<h2>Admins Login</h2>
+
 % if( stash 'error' ){
 	Sorry, invalid username/password combination
 % }

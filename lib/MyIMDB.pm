@@ -66,7 +66,7 @@ sub startup {
   my $admin = $r->bridge('/admin')->to('admins#auth');
   $admin->route('/')->to(controller => 'admins');
   #$admin->route('/')->to(controller => 'admins');
-  $admin->route('/#admin_name')->to('admins#home');
+  $admin->route('/#admin_name')->to(action => 'home');
   $admin->route('/users/all')->to(action => 'allUsers');
   $admin->route('/users/:id/delete')->to(action => 'deleteUser');
   $admin->route('/users/search')->to(action => 'searchUsers');

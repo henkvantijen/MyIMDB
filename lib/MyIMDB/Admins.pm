@@ -30,19 +30,19 @@ sub home {
 
 }
 
+# this action is called with a routing bridge
+# and it checks if the admin is logged in or not
+# in case it isn't it redirects to the user login 
+# and not to the admin login
 sub auth {
 	my $self = shift;
 
-	print Dumper( "in admins#auth");
-
 	if( $self->session('admin_name') ){
-			print Dumper('checking session for admin name');
-			print Dumper($self->session('admin_name'));
 			return 1;
 	}
 	
-	print Dumper('in afara if-ului...if you see this...smth is very wrong');
 	$self->redirect_to('/login');
+	return 0;
 }
 
 sub allUsers {
