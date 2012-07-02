@@ -6,7 +6,7 @@
 	<th>Delete</th>
 	% foreach( @$all_users ){
 		<tr>
-			<td><%= $_->name %></td>
+			<td><a href="<%= $_->name %>"><%= $_->name %></a></td>
 			<td><a href="/admin/users/<%= $_->id %>/delete">Delete User</a></td>
 		</tr>
 	% }

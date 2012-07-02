@@ -64,6 +64,15 @@ sub allUsers {
 	$self->stash( all_users => \@all_users );
 }
 
+sub userDetails {
+	my $self = shift;
+
+	my $user_name = $self->param('user_name');
+	my $user = MyIMDB::Models::Users->retrieve( name => $user_name );
+
+	$self->stash( user => $user );
+}
+
 sub deleteUser {
 	my $self = shift;
 

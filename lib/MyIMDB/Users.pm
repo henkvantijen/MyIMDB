@@ -34,6 +34,7 @@ sub home {
 		}
 	}
 
+	#print Dumper( $user->actors );
 	#for favorited actors it's the same as for favorited movies	
 	foreach( $user->actors ){
 		if( $_->favorited ){

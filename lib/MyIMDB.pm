@@ -67,6 +67,7 @@ sub startup {
   $admin->route('/users/all')->to(action => 'allUsers');
   $admin->route('/users/:id/delete')->to(action => 'deleteUser');
   $admin->route('/users/search')->to(action => 'searchUsers');
+  $admin->route('/users/#user_name')->to(action => 'userDetails');
 
   # Error routes
   $r->route('/404')->to(template => 'errors/404');

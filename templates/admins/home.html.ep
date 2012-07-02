@@ -5,9 +5,10 @@
 
 	<h3>User Admin</h3>
 	<a href="/admin/users/all">List all users</a> or </br></br>
+	Search users:
 	%= form_for '/admin/users/search' => (method => 'POST') => begin
 		%= text_field 'name' 
-		%= submit_button 'Search'
+		%= submit_button 'Search Users'
 	% end
 % } else {
 	<p>you are not welcomed here</p>

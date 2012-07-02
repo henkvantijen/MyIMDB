@@ -19,7 +19,7 @@
 		Your favorite actors are:
 		<ul>
 		% foreach( @$favorited_actors ){
-			<li><a href="/actors/<%= $_->actor_id %>"><%= $_->actor_id->name %></ul></li>
+			<li><a href="/actors/<%= $_->actor_id %>"><%= $_->actor_id->name %></a></li>
 		% }
 		</ul>
 	% } else {
@@ -41,7 +41,7 @@
 		<%= $user_name %>'s favorite actors are:
 		<ul>
 		% foreach( @$favorited_actors ){
-			<li><a href="/actors/<%= $_->actor_id %>"><%= $_->actor_id->name %></ul></li>
+			<li><a href="/actors/<%= $_->actor_id %>"><%= $_->actor_id->name %></a></li>
 		% } 
 		</ul>
 	% } else {

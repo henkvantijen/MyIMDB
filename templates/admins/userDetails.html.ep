@@ -1,0 +1,25 @@
+% title "user Details";
+
+% my $user = stash('user');
+
+% use Data::Dumper;
+
+<%= $user->name %>'s rated movies are:
+% foreach( $user->movies ){
+	<ul>
+	% if( $_->rated eq 'y' ){
+		<li><%= $_->movie_id->name %></li>
+	% }	
+	</ul>
+% }
+
+<%= $user->name %> commented on the following movies:
+<ul>
+% foreach( $user->comments ){
+	<li><%= $_->movie_id->name%>: <%= $_->comment %></li>
+% }
+</ul>
+
+
+	
+
