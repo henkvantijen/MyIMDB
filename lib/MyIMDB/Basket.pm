@@ -101,8 +101,6 @@ sub sendEmail {
 	sendmail(%mail) or die $Mail::Sendmail::error;
 	$mailcfg{smtp} = [qw(localhost 127.0.0.1)];
 
-	print Dumper("\nmail sent\n");
-
 	$self->redirect_to('basket/view');
 }
 

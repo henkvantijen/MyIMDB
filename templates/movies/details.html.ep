@@ -56,7 +56,7 @@
 % if( $user_name ){
 	Leave a comment:
 	%= form_for "/movies/$movie/comment" => (method => 'POST') => begin
-		%= input_tag 'comment', maxlength=>'150', size=>'30' 
+		%= text_area 'comment' =>  rows => "10", cols => "40" 
 		%= submit_button 'Comment'
 	% end
 	
