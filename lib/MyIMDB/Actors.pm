@@ -62,7 +62,9 @@ sub markFavorite {
 		user_id => $user_id,
 		actor_id => $actor_id
 	});
-	
+
+	# if user_actor object instance has been created
+	# insert 'y' in favorited column and update	
 	if ($user_actor) {
 		$user_actor->favorited('y');
 		$user_actor->update();

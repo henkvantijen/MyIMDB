@@ -30,15 +30,18 @@ sub startup {
   # Actors routes
   my $actor = $r->route('/actors/:id')->to(controller => 'actors');
   $actor->route('/')->to(action => 'details');
-  $actor->post('/mark')->to(action => 'markFavorite');
+  
+  # we create an routing bridge to check if the user is logged in or not
+  $actor->bridge('/')->to('users#auth')->post('/mark')->to('actors#markFavorite');
 
   # Movies routes
   my $movie = $r->route('/movies/:id')->to(controller => 'movies');
   $movie->route('/')->to(action => 'details');
-  $movie->post('/rate')->to(action => 'setRate');
-  $movie->post('/mark')->to(action => 'markFavorite');
   $movie->route('/buy')->to('basket#buyMovie');
-  $movie->post('/comment')->to(action => 'comment');
+  
+  $movie->bridge('/')->to('users#auth')->post('/rate')->to('movies#setRate');
+  $movie->bridge('/')->to('users#auth')->post('/mark')->to('movies#markFavorite');
+  $movie->bridge('/')->to('users#auth')->post('/comment')->to('movies#comment');
 
   # Users routes
   $r->route('/user/#user_name')->to('users#home');
@@ -53,8 +56,8 @@ sub startup {
   $basket->route('/send')->to(action =>'sendEmail');
 
   # Admin routes
-  $r->route('/admin_login')->via('get')->to(template => 'admins/login');
-  $r->route('/admin_login')->via('post')->to('admins#login');
+  $r->get('/admin_login')->to(template => 'admins/login');
+  $r->post('/admin_login')->to('admins#login');
 
   # this bridge is used to always check if and admin is logged in or not
   # so that the actions below will execute or...not 

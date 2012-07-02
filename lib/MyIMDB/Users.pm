@@ -64,16 +64,17 @@ sub login {
 	$self->stash( error => 1 );
 }
 
-
+# this method is called whenever we want to make sure a user is logged in or not
 sub auth {
 	my $self = shift;
-
+	
 	if( $self->session('name') ){
-			return;
+			return 1;
 	}
 
 	$self->flash(login => 'You have to login first');
 	$self->redirect_to('/login');
+	return 0;  
 }
 
 # this method is called when the users wants to log out
