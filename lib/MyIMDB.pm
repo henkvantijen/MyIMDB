@@ -19,13 +19,13 @@ sub startup {
   $r->route('/home/search')->to('home#search');
 
   # Login and logout routes
-  $r->route('/login')->via('get')->to( template => 'login/login' );
-  $r->route('/login')->via('post')->to('login#login');
-  $r->route('/logout')->to('logout#logout');
+  $r->get('/login')->to( template => 'users/login' );
+  $r->post('/login')->to('users#login');
+  $r->get('/logout')->to('users#logout');
 
   # Join routes
-  $r->route('/join')->via('get')->to( template => 'join/join' );
-  $r->route('/join')->via('post')->to('join#join');
+  $r->get('/join')->to( template => 'users/join' );
+  $r->post('/join')->to('users#join');
 
   # Actors routes
   my $actor = $r->route('/actors/:id')->to(controller => 'actors');
@@ -33,8 +33,6 @@ sub startup {
   $actor->post('/mark')->to(action => 'markFavorite');
 
   # Movies routes
-
-  #my $movie = $r->bridge->to('users#auth')->route('/movies/:id')->to(controller => 'movies');
   my $movie = $r->route('/movies/:id')->to(controller => 'movies');
   $movie->route('/')->to(action => 'details');
   $movie->post('/rate')->to(action => 'setRate');
@@ -55,17 +53,13 @@ sub startup {
   $basket->route('/send')->to(action =>'sendEmail');
 
   # Admin routes
-  #my $admin = $r->route('/admin')->to(controller => 'admins');
-  #$admin->route('/login')->via('get')->to(template => 'admins/login');
-  #$admin->route('/login')->via('post')->to(action => 'login');
-
   $r->route('/admin_login')->via('get')->to(template => 'admins/login');
   $r->route('/admin_login')->via('post')->to('admins#login');
 
-  #my $admin = $r->under('/admin');
+  # this bridge is used to always check if and admin is logged in or not
+  # so that the actions below will execute or...not 
   my $admin = $r->bridge('/admin')->to('admins#auth');
   $admin->route('/')->to(controller => 'admins');
-  #$admin->route('/')->to(controller => 'admins');
   $admin->route('/#admin_name')->to(action => 'home');
   $admin->route('/users/all')->to(action => 'allUsers');
   $admin->route('/users/:id/delete')->to(action => 'deleteUser');

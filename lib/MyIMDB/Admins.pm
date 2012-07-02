@@ -10,6 +10,8 @@ use MyIMDB::Models::Users;
 
 use Data::Dumper;
 
+# login method that check credentials 
+# and places the admin name in session
 sub login {
 	my $self = shift;
 	
@@ -18,7 +20,6 @@ sub login {
 
 	if( MyIMDB::Models::Admins->sql_login_count->select_val($admin_name, b($self->param('pwd'))->md5_sum) == 1 ){
 		$self->session( admin_name => $admin_name );
-		print Dumper("in login, placed admin name in session\n");
 		return $self->redirect_to( "/admin/$admin_name" );
 	}
 
@@ -43,6 +44,16 @@ sub auth {
 	
 	$self->redirect_to('/login');
 	return 0;
+}
+
+# logout method that expires the session
+# and redirects to home page
+sub logout{
+	my $self = shift;
+
+	$self->session( expires => 1);
+
+	$self->redirect_to('/');
 }
 
 sub allUsers {
