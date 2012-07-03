@@ -226,7 +226,7 @@ CREATE TABLE `movies_users_comments` (
   `comment_id` int(100) NOT NULL AUTO_INCREMENT,
   `comment` char(150) DEFAULT NULL,
   PRIMARY KEY (`comment_id`,`movie_id`,`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +235,7 @@ CREATE TABLE `movies_users_comments` (
 
 LOCK TABLES `movies_users_comments` WRITE;
 /*!40000 ALTER TABLE `movies_users_comments` DISABLE KEYS */;
-INSERT INTO `movies_users_comments` VALUES (1,5,1,'test test test comment'),(1,5,2,'another test comment');
+INSERT INTO `movies_users_comments` VALUES (1,5,1,'test test test comment'),(1,5,2,'another test comment'),(0,5,3,'dasdas'),(0,5,4,'dsadsadas');
 /*!40000 ALTER TABLE `movies_users_comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -325,4 +325,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-07-02 16:54:33
+-- Dump completed on 2012-07-03 11:07:19
