@@ -1,3 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body{}
+
+#wrapper{
+	 width:840px;
+	 display:block;
+	 margin:auto;
+}
+
 nav {
 	display:block;
 }

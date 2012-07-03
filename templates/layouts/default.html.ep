@@ -6,7 +6,8 @@
 			<%= title %>
 		</title>
 	</head>
-  	<body>
+	<body>
+		<section id="wrapper">
 		<h1>My::IMDB</h1>
 			<nav>
 				<ul>
@@ -24,6 +25,7 @@
 			</nav><!--end:nav-->
 	  	<div id="container">
 	  	 	 <%= content %>
-		</div>
+	 	</div>
+		</section><!--end:wrapper-->
   	</body>
 </html>
