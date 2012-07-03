@@ -64,13 +64,23 @@ sub allUsers {
 	$self->stash( all_users => \@all_users );
 }
 
+# this method will show user details
 sub userDetails {
 	my $self = shift;
 
 	my $user_name = $self->param('user_name');
 	my $user = MyIMDB::Models::Users->retrieve( name => $user_name );
 
-	$self->stash( user => $user );
+	# we create a hash to organize the comments as anonymous hashes
+	# under the same movie name as a key
+	my %comments;
+
+	foreach( $user->comments ){
+		$comments{$_->movie_id->name}->{$_->comment_id} = $_->comment;
+	}
+
+	$self->stash( user => $user,
+   				  comments =>\%comments	);
 }
 
 sub deleteUser {

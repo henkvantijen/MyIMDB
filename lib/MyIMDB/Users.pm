@@ -112,10 +112,4 @@ sub join {
 	$self->redirect_to("/user/$user_name");
 }
 
-
-
-
-
-
-
 1;

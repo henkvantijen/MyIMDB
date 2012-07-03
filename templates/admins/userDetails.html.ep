@@ -2,8 +2,6 @@
 
 % my $user = stash('user');
 
-% use Data::Dumper;
-
 <%= $user->name %>'s rated movies are:
 % foreach( $user->movies ){
 	<ul>
@@ -12,12 +10,18 @@
 	% }	
 	</ul>
 % }
-
+</br>
 <%= $user->name %> commented on the following movies:
 <ul>
-% foreach( $user->comments ){
-	<li><%= $_->movie_id->name%>: <%= $_->comment %></li>
-% }
+	% while( my($movie_names, $movie_comments) = each(%$comments) ){
+		<li> <%= $movie_names %>
+			<ul>
+				% while( my($k, $v) = each(%$movie_comments) ){
+					<li><%= $v %></li>
+				% }
+			</ul>
+		</li>
+	% }
 </ul>
 
 
