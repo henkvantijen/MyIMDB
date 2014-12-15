@@ -20,4 +20,4 @@ EOF
 $ENV{MOJO_APP} ||= 'MyIMDB';
 
 # Start commands
-Mojolicious::Commands->start;
+Mojolicious::Commands->start_app('MyIMDB');
