@@ -1,6 +1,9 @@
 package MyIMDB;
 use Mojo::Base 'Mojolicious';
 
+use v5.018;
+use Data::Dump qw/dump/;
+
 # This method will run once at server start
 sub startup {
   my $self = shift;
@@ -10,10 +13,8 @@ sub startup {
 
   # Routes
   my $r = $self->routes;
-
+  
   # Normal route to controller
-  
-  
   # Home page routes
   $r->route('/')->to('home#home');
   $r->route('/home/search')->to('home#search');
