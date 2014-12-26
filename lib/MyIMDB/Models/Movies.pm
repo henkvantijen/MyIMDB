@@ -3,12 +3,19 @@ package MyIMDB::Models::Movies;
 use strict;
 use warnings;
 
-use base 'MyIMDB::Models::Base';
+use base 'MyIMDB::Models::Object';
 
-__PACKAGE__->set_up_table('movies');
+__PACKAGE__->meta->setup(
+    table      => 'movies',
+    columns    => [ qw(movie_id name launch_date duration rating) ],
+    pk_columns => 'movie_id',
+    unique_key => 'movie_id',
+);
 
-__PACKAGE__->has_many( genres => 'MyIMDB::Models::MoviesGenres' );
-__PACKAGE__->has_many( users => 'MyIMDB::Models::UsersMovies' );
-__PACKAGE__->has_many( users_comments => 'MyIMDB::Models::MoviesUsersComments' );
+
+# do not remove until the setup is fully updated
+#__PACKAGE__->has_many( genres => 'MyIMDB::Models::MoviesGenres' );
+#__PACKAGE__->has_many( users => 'MyIMDB::Models::UsersMovies' );
+#__PACKAGE__->has_many( users_comments => 'MyIMDB::Models::MoviesUsersComments' );
 
 1;
