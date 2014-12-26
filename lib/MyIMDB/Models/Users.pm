@@ -3,32 +3,37 @@ package MyIMDB::Models::Users;
 use strict;
 use warnings;
 
-use base 'MyIMDB::Models::Base';
+use base 'MyIMDB::Models::Object';
 
-__PACKAGE__->set_up_table('users');
+__PACKAGE__->meta->setup(
+    table => 'users',
+    columns => [ qw(user_id name password email) ],
+    pk_columns => 'user_id',
+    unique_key => 'user_id',
+);
 
-__PACKAGE__->has_many( movies => 'MyIMDB::Models::UsersMovies' );
-__PACKAGE__->has_many( actors => 'MyIMDB::Models::UsersActors' );
-__PACKAGE__->has_many( comments => 'MyIMDB::Models::MoviesUsersComments' );
+#__PACKAGE__->has_many( movies => 'MyIMDB::Models::UsersMovies' );
+#__PACKAGE__->has_many( actors => 'MyIMDB::Models::UsersActors' );
+#__PACKAGE__->has_many( comments => 'MyIMDB::Models::MoviesUsersComments' );
 
 
 # this query is called when the users wants to login
-__PACKAGE__->set_sql( login_count => qq{
-		SELECT COUNT(*) FROM __TABLE__ WHERE name=? AND pass=?
-});
+#__PACKAGE__->set_sql( login_count => qq{
+#    SELECT COUNT(*) FROM __TABLE__ WHERE name=? AND pass=?
+#});
 
 # this query is called when the users wants to join
 # it checks if there is already a registered user with the same name
-__PACKAGE__->set_sql( join_count => qq{
-		SELECT COUNT(*) FROM __TABLE__ WHERE name=?
-});
+#__PACKAGE__->set_sql( join_count => qq{
+#		SELECT COUNT(*) FROM __TABLE__ WHERE name=?
+#});
 
 
 # this query is called when the users wants to join
 # it checks if there is already a registered user with the same email
-__PACKAGE__->set_sql( email_count => qq{
-		SELECT COUNT(*) FROM __TABLE__ WHERE email=?
-});
+_#_PACKAGE__->set_sql( email_count => qq{
+#		SELECT COUNT(*) FROM __TABLE__ WHERE email=?
+#});
 
 sub validate {
 	my $self = shift;
