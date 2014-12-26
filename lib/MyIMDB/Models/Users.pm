@@ -7,7 +7,7 @@ use base 'MyIMDB::Models::Object';
 
 __PACKAGE__->meta->setup(
     table => 'users',
-    columns => [ qw(user_id name password email) ],
+    columns => [ qw(user_id user_name first_name last_name password email) ],
     pk_columns => 'user_id',
     unique_key => 'user_id',
 );
