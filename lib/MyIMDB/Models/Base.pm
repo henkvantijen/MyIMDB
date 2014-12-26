@@ -3,8 +3,16 @@ package MyIMDB::Models::Base;
 use strict;
 use warnings;
 
-use base 'Class::DBI::mysql';
+use base qw(Rose::DB);
 
-MyIMDB::Models::Base->connection('DBI:mysql:database=MyIMDB;host=127.0.0.1','root','as')
-								or die "couldn't connect to db $!\n";
+__PACKAGE__->use_private_registry;
+
+__PACKAGE__->register_db(
+    driver   => 'SQLite',
+    database => 'MyIMDB.db',
+    host     => 'localhost',
+    username => '',
+    password => '',
+);
+
 1;
