@@ -1,4 +1,4 @@
-package MyIMDB::Models::Movies;
+package MyIMDB::Models::Movie;
 
 use strict;
 use warnings;
@@ -12,6 +12,8 @@ __PACKAGE__->meta->setup(
     unique_key => 'movie_id',
 );
 
+
+__PACKAGE__->meta->make_manager_class('movies');
 
 # do not remove until the setup is fully updated
 #__PACKAGE__->has_many( genres => 'MyIMDB::Models::MoviesGenres' );
