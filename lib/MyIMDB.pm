@@ -1,23 +1,23 @@
 package MyIMDB;
-use Mojo::Base 'Mojolicious';
 
-use v5.018;
+use Mojo::Base 'Mojolicious';
 use Data::Dump qw/dump/;
+
 
 # This method will run once at server start
 sub startup {
-  my $self = shift;
+    my $self = shift;
 
-  # Documentation browser under "/perldoc"
-  $self->plugin('PODRenderer');
+    # Documentation browser under "/perldoc"
+    $self->plugin('PODRenderer');
 
-  # Routes
-  my $r = $self->routes;
+    # Routes
+    my $r = $self->routes;
   
   # Normal route to controller
   # Home page routes
   $r->route('/')->to('home#home');
-  $r->route('/home/search')->to('home#search');
+  $r->get('/home/search')->to('home#search');
 
   # Login and logout routes
   $r->get('/login')->to( template => 'users/login' );
