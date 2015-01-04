@@ -11,10 +11,10 @@
 	<table class="sortable" border="1">
 		<th>Name</th>
 		<th>Birth Date</th>
-		% foreach( @$search_result ){
+		% foreach my $actor (@$search_result) {
 			<tr>
-				<td><%= link_to url_for($_->name)->url_unescape => "/actors/$_" %></td>
-				<td><%= $_->bdate %></td>
+				<td><%= link_to url_for( "$actor->{first_name} ". "$actor->{last_name}")->url_unescape => "/actors/$actor->{'first_name'}" %></td>
+				<td><%= $actor->{date_of_birth} %></td>
 			</tr>
 		% }
 		</table>
