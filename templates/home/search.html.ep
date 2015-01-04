@@ -26,11 +26,11 @@
 		<th>Name</th>
 		<th>Launch Date</th>
 		<th>Rating</th>
-		% foreach( @$search_result ){
+		% foreach my $movie (@$search_result){
 			<tr>	
-				<td><%= link_to url_for($_->name)->url_unescape => "/$search_type/$_" %></td>
-				<td><%= $_->launch_date %></td>
-				<td><%= $_->rating %></td> 
+				<td><%= link_to url_for($movie->{name})->url_unescape => "/$search_type/$movie->{name}" %></td>
+				<td><%= $movie->{launch_date} %></td>
+				<td><%= $movie->{rating} %></td> 
 			</tr>
 		% }
 	</table>
