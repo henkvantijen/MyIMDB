@@ -1,14 +1,14 @@
 package MyIMDB::Home;
 
-use strict;
-use warnings;
+use Mojo::Base 'Mojolicious::Controller';
+use MyIMDB::Models::Actor;
+use Data::Dump qw/dump/;
+use DDP;
 
-use base 'Mojolicious::Controller';
-
-use MyIMDB::Models::Actors;
-use MyIMDB::Models::Movies;
-use MyIMDB::Models::Genres;
-use MyIMDB::Models::MoviesGenres;
+#use MyIMDB::Models::Actors;
+#use MyIMDB::Models::Movies;
+#use MyIMDB::Models::Genres;
+#use MyIMDB::Models::MoviesGenres;
 
 sub home {
 	my $self = shift;
@@ -18,16 +18,18 @@ sub home {
 
 sub search {
 	my $self = shift;
-
-	my $search_query = $self->param('search');
-	my $search_type = $self->param('type');
-	my @search_result;
+    
+    my $search_query = $self->param('search');
+    my $search_type = $self->param('type');
+	
+    my $search_result;
+    my @search_result;
 	my @movies;
 	my @genres;
 
 	if( $search_type =~ /actors/ ){
-		@search_result = MyIMDB::Models::Actors->search_like( name => "%$search_query%" );
-	} elsif( $search_type =~ /movies/ ){
+		$search_result = $self->_actors($search_query);
+    } elsif( $search_type =~ /movies/ ){
 		@search_result = MyIMDB::Models::Movies->search_like( name => "%$search_query%" );
 	} elsif( $search_type =~ /genres/ ){
 		
@@ -51,10 +53,32 @@ sub search {
 
 	$self->stash( search_query => \$search_query,
 				  search_type => $search_type,
-				  search_result => \@search_result,
+				  search_result => $search_result,
 			  	  movies => \@movies,
 			  	  genres => \@genres
 			    );
 }
+
+sub _actors {
+    my ($self, $name) = @_;
+    
+    my $found_actors = MyIMDB::Models::Actor::Manager->get_actors(
+        query => 
+        [
+            last_name => { like => "%$name" },
+        ],
+    );
+
+    my $actors = [];
+    foreach my $actor (@$found_actors) {
+        my $current = { first_name => $actor->first_name,
+                        last_name  => $actor->last_name,
+                        date_of_birth => $actor->date_of_birth,
+                      };
+        push @$actors, $current;
+    }
+
+    return $actors;
+}   
 
 1;
