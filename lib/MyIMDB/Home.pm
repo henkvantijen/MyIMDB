@@ -2,11 +2,11 @@ package MyIMDB::Home;
 
 use Mojo::Base 'Mojolicious::Controller';
 use MyIMDB::Models::Actor;
+use MyIMDB::Models::Movie;
+
 use Data::Dump qw/dump/;
 use DDP;
 
-#use MyIMDB::Models::Actors;
-#use MyIMDB::Models::Movies;
 #use MyIMDB::Models::Genres;
 #use MyIMDB::Models::MoviesGenres;
 
@@ -30,8 +30,8 @@ sub search {
 	if( $search_type =~ /actors/ ){
 		$search_result = $self->_actors($search_query);
     } elsif( $search_type =~ /movies/ ){
-		@search_result = MyIMDB::Models::Movies->search_like( name => "%$search_query%" );
-	} elsif( $search_type =~ /genres/ ){
+	    $search_result = $self->_movies($search_query);
+    } elsif( $search_type =~ /genres/ ){
 		
 		#search for the genre_id in the Genres table
 		@genres = MyIMDB::Models::Genres->search_like( genre => "%$search_query%" );
@@ -80,5 +80,27 @@ sub _actors {
 
     return $actors;
 }   
+
+sub _movies {
+    my ($self, $name) = @_;
+
+    my $movies_found = MyIMDB::Models::Movie::Manager->get_movies(
+        query => 
+        [
+            name => { like => "%$name%" },
+        ],
+    );
+
+    my $movies = [];
+   
+    @$movies = map {
+        { name        => $_->name, 
+          launch_date => $_->launch_date,
+          rating      => $_->rating,
+        } 
+    } @$movies_found;
+
+    return $movies;
+}
 
 1;
