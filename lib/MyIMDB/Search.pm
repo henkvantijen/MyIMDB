@@ -1,4 +1,4 @@
-package MyIMDB::Home;
+package MyIMDB::Search;
 
 use Mojo::Base 'Mojolicious::Controller';
 use MyIMDB::Models::Actor;

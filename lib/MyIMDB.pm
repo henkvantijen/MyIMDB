@@ -16,8 +16,8 @@ sub startup {
   
   # Normal route to controller
   # Home page routes
-  $r->route('/')->to('home#home');
-  $r->get('/home/search')->to('home#search');
+  $r->get('/')->to('search#home');
+  $r->get('/home/search')->to('search#search');
 
   # Login and logout routes
   $r->get('/login')->to( template => 'users/login' );
