@@ -2,7 +2,8 @@ package MyIMDB::Search;
 
 use Mojo::Base 'Mojolicious::Controller';
 use MyIMDB::Models::Actor;
-use MyIMDB::Models::Movie;
+
+use MyIMDB::Movie;
 
 use Data::Dump qw/dump/;
 use DDP;
@@ -12,7 +13,7 @@ use DDP;
 
 sub home {
 	my $self = shift;
-
+    
 	$self->render();
 }
 
@@ -28,9 +29,10 @@ sub search {
 	my @genres;
 
 	if( $search_type =~ /actors/ ){
-		$search_result = $self->_actors($search_query);
+        $search_result = $self->_actors($search_query);
     } elsif( $search_type =~ /movies/ ){
-	    $search_result = $self->_movies($search_query);
+        my $movie_obj = MyIMDB::Movie->new;
+        $search_result = $movie_obj->search($search_query);
     } elsif( $search_type =~ /genres/ ){
 		
 		#search for the genre_id in the Genres table
@@ -65,7 +67,7 @@ sub _actors {
     my $found_actors = MyIMDB::Models::Actor::Manager->get_actors(
         query => 
         [
-            last_name => { like => "%$name" },
+            last_name => { like => "%$name%" },
         ],
     );
 
@@ -80,27 +82,5 @@ sub _actors {
 
     return $actors;
 }   
-
-sub _movies {
-    my ($self, $name) = @_;
-
-    my $movies_found = MyIMDB::Models::Movie::Manager->get_movies(
-        query => 
-        [
-            name => { like => "%$name%" },
-        ],
-    );
-
-    my $movies = [];
-   
-    @$movies = map {
-        { name        => $_->name, 
-          launch_date => $_->launch_date,
-          rating      => $_->rating,
-        } 
-    } @$movies_found;
-
-    return $movies;
-}
 
 1;
