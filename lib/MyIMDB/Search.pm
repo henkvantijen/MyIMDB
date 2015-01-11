@@ -4,6 +4,7 @@ use Mojo::Base 'Mojolicious::Controller';
 use MyIMDB::Models::Actor;
 
 use MyIMDB::Movie;
+use MyIMDB::Actor;
 
 use Data::Dump qw/dump/;
 use DDP;
@@ -29,7 +30,8 @@ sub search {
 	my @genres;
 
 	if( $search_type =~ /actors/ ){
-        $search_result = $self->_actors($search_query);
+        my $actor_obj = MyIMDB::Actor->new;
+        $search_result = $actor_obj->search($search_query);
     } elsif( $search_type =~ /movies/ ){
         my $movie_obj = MyIMDB::Movie->new;
         $search_result = $movie_obj->search($search_query);
@@ -60,27 +62,5 @@ sub search {
 			  	  genres => \@genres
 			    );
 }
-
-sub _actors {
-    my ($self, $name) = @_;
-    
-    my $found_actors = MyIMDB::Models::Actor::Manager->get_actors(
-        query => 
-        [
-            last_name => { like => "%$name%" },
-        ],
-    );
-
-    my $actors = [];
-    foreach my $actor (@$found_actors) {
-        my $current = { first_name => $actor->first_name,
-                        last_name  => $actor->last_name,
-                        date_of_birth => $actor->date_of_birth,
-                      };
-        push @$actors, $current;
-    }
-
-    return $actors;
-}   
 
 1;

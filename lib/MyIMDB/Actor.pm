@@ -1,12 +1,34 @@
-package MyIMDB::Actors;
+package MyIMDB::Actor;
 
-use strict;
-use warnings;
+use Mojo::Base 'Mojolicious::Controller';
+use MyIMDB::Models::Actor;
 
-use base 'Mojolicious::Controller';
-use MyIMDB::Models::Actors;
+use DDP;
+use Data::Dump qw/dump/;
 
-use Data::Dumper;
+sub search {
+    my ($self, $query) = @_;
+
+    # TODO split $query 
+    my $found_actors = MyIMDB::Models::Actor::Manager->get_actors(
+        query =>
+        [
+            last_name => { like => "%$query%" },
+        ],
+    );
+
+    my $actors = [];
+    @$actors = map { 
+        { 
+            first_name => $_->first_name,
+            last_name  => $_->last_name,
+            date_of_birth => $_->date_of_birth,
+        } 
+    } @$found_actors;
+    
+    return $actors;
+}
+
 
 sub list {
 	my $self = shift;
