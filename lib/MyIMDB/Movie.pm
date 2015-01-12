@@ -1,11 +1,14 @@
 package MyIMDB::Movie;
-
 use Mojo::Base 'Mojolicious::Controller';
 
 use MyIMDB::Models::Movie;
 use Data::Dumper;
 use DDP;
 use Data::Dump qw/dump/;
+
+# define attributes
+# there are also accessor methods
+has [qw/name launch_date rating/];
 
 sub search {
     my ($self, $query) = @_;
@@ -34,7 +37,7 @@ sub search {
         { name        => $_->name,
           launch_date => $_->launch_date,
           rating      => $_->rating,
-        } 
+        }
     } @$found_movies;
     
     return $movies;
