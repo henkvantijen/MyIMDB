@@ -1,10 +1,10 @@
 package MyIMDB::Search;
-
 use Mojo::Base 'Mojolicious::Controller';
-use MyIMDB::Models::Actor;
 
-use MyIMDB::Movie;
 use MyIMDB::Actor;
+use MyIMDB::Models::Actor;
+use MyIMDB::Movie;
+use MyIMDB::Movie::Manager;
 
 use Data::Dump qw/dump/;
 use DDP;
@@ -33,8 +33,8 @@ sub search {
         my $actor_obj = MyIMDB::Actor->new;
         $search_result = $actor_obj->search($search_query);
     } elsif( $search_type =~ /movies/ ){
-        my $movie_obj = MyIMDB::Movie->new;
-        $search_result = $movie_obj->search($search_query);
+        my $movie_manager = MyIMDB::Movie::Manager->new;
+        $search_result = $movie_manager->search($search_query);
     } elsif( $search_type =~ /genres/ ){
 		
 		#search for the genre_id in the Genres table
