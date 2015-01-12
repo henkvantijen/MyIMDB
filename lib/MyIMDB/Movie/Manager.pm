@@ -11,12 +11,12 @@ sub search {
 
     my $movies;
     @$movies = map {
-        MyIMDB::Movie->new(  
-            { name => $_->name,
-              launch_date => $_->launch_date,
-              rating => $_->rating,
-            })
-    } @$found_movies;
+        MyIMDB::Movie->new({
+            name => $_->name,
+            launch_date => $_->launch_date,
+            rating => $_->rating,
+        }) 
+     } @$found_movies;
    
     return $movies;
 }
