@@ -1,50 +1,43 @@
 % layout 'default';
 % title "$user_name Home";
-
-% if( session('name') and session('name') eq $user_name ){
-	Hi, <%= session 'name' %>!</br>
-		
-	% if( scalar @$favorited_movies > 0  ){
-		Your favorite movies are:
-		<ul>
-		% foreach( @$favorited_movies ){
-			<li><a href="/movies/<%= $_->movie_id %>"><%= $_->movie_id->name %></a></li>
-		% }
-		</ul>
-	% } else {
-		You don't have any favorited movies yet!
-	% }
-
-	% if( scalar @$favorited_actors > 0 ){
-		Your favorite actors are:
-		<ul>
-		% foreach( @$favorited_actors ){
-			<li><a href="/actors/<%= $_->actor_id %>"><%= $_->actor_id->name %></a></li>
-		% }
-		</ul>
-	% } else {
-		You don't have any favorited actors yet!
-	% }
+<hr>
+% my $heading_movies; my $heading_actors;  my $heading_no_movies; my $heading_no_actors;
+% if ( (session('name') || 0) eq $user_name ) {
+%   $heading_movies    = 'Hi, ' . $user_name . ', your favorite movies are:' ;
+%   $heading_actors    = $user_name . ', your favorite actors are:' ;
+%   $heading_no_movies = 'Hi, ' . $user_name  . ', you dont have favorite yet!' ;
+%   $heading_no_actors = $user_name . ', you dont have favorite actors yet!' ;
 % } else {
-	% if( scalar @$favorited_movies > 0 ){
-		<%= $user_name %>'s favorite movies are:
+%   $heading_movies    = $user_name . qq('s favorite movies are:) ;
+%   $heading_actors    = $user_name . qq('s favorite actors are:) ;
+%   $heading_no_movies = $user_name . qq( does not have favorite movies yet!) ;
+%   $heading_no_actors = $user_name . qq( does not have favorite actors yet!) ;
+% };
+
+		
+	% if( scalar @{$user_obj->{movies}} > 0  ){
+		<%= $heading_movies %> 	<br>
 		<ul>
-		% foreach( @$favorited_movies ){
-			<li><a href="/movies/<%= $_->movie_id %>"><%= $_->movie_id->name %></a></li>
+                % foreach( @{$user_obj->{movies}} ) {
+                        <li> <a href="/movies/<%= $_->id %>"><%= $_->title %></a>  
+				<%= '*' x $_->map_record->rating %> 
+				<%==  qq(&#9873;) if ($_->map_record->flagged)  %> </li>
+                % }
+                </ul>
+	% } else {
+		<%= $heading_no_movies %> 	
+	% }
+
+	% if     (1 == 0)  {  # ( scalar @$favorited_actors > 0 ){
+		<%= $heading_actors %> 	<br>
+		<ul>
+		% foreach( () )   {    #@$favorited_actors ){
+			<li><a href="/actors/<%= $_->actor_id %>"><%= $_->actor_id->name %></a></li>
 		% }
 		</ul>
-    % } else {
-        <%= $user_name %> doesn't have any favorited movies yet!
-    % }
-	
-	% if( scalar @$favorited_actors > 0 ){
-		<%= $user_name %>'s favorite actors are:
-		<ul>
-		% foreach( @$favorited_actors ){
-			<li><a href="/actors/<%= $_->actor_id %>"><%= $_->actor_id->name %></a></li>
-		% } 
-		</ul>
 	% } else {
-		<%= $user_name %> doesn't have any favorite actors yet!
-	% } 
-% }
+		<%= $heading_no_actors %> 	
+	% }
+
+<br/>
+
