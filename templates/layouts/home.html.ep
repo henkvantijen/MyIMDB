@@ -6,6 +6,10 @@
 		</title>
 	</head>
   	<body>
+% if (my $message = flash 'message') {
+      <p><b>FLASH: <%= $message %></b></p>
+<hr>
+% }
 		<%= content %>
 	</body>
 </html>

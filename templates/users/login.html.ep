@@ -1,7 +1,7 @@
 % layout 'default';
-% title 'Users Log-In';
+% title 'User Log-In';
 
-<h2>Users Login</h2>
+<h2>User Login</h2>
 
 % if( flash 'login' ) {
 	%= flash 'login'
@@ -18,3 +18,11 @@
 	</table>
     %= submit_button 'Login'
 % end
+
+
+<div>
+ Forgot Password? <a href="/forgot">Reset Password</a>
+
+
+</div>
+

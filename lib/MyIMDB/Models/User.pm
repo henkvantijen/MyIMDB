@@ -20,16 +20,21 @@ use warnings;
 use base qw(MyIMDB::DB::Object);
 
 __PACKAGE__->meta->setup (
-    table => 'users',
-    unique_key => ['user_name', 'id'],
-    auto => 1,
+    table      => 'users',
+    unique_key => ['user_name', 'id', 'email'],
+#    columns =>
+#    [
+#      email_validated => { type => 'boolean' },
+#    ],
+#
+    auto       => 1,
     
     relationships => 				# Define "many to many" relationship 
     [
       movies =>
       {
-        type      => 'many to many',
-        map_class => 'MyIMDB::Models::UserMovie',
+        type         => 'many to many',
+        map_class    => 'MyIMDB::Models::UserMovie',
         manager_args => { with_map_records => 1 },    # force users_movie records to be accessible
       },
     ],
@@ -77,7 +82,6 @@ sub validate {
 	
 	return;
 }
-
 
 
 

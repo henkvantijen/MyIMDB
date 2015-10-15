@@ -3,7 +3,7 @@ package MyIMDB::Models::UserRoleTypes;
 use strict;
 use warnings;
 
-use base 'MyIMDB::Models::Object';
+use base 'MyIMDB::DB::Object';
 
 __PACKAGE__->meta->setup(
     table      => 'user_role_types',

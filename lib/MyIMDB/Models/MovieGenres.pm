@@ -3,7 +3,7 @@ package MyIMDB::Models::MovieGenres;
 use strict;
 use warnings;
 
-use base 'MyIMDB::Models::Object';
+use base 'MyIMDB::DB::Object';
 
 __PACKAGE__->set_up_table(
     table => 'movies_genres',

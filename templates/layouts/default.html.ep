@@ -7,14 +7,17 @@
 		</title>
 	</head>
 	<body>
+
+default.html.ep layout
 		<section id="wrapper">
-		<h1>My::IMDB</h1>
-			<nav>
+		<h3>My::IMDB</h3>
+			<nav>  
 				<ul>
-					% if( session('name') ){
+					% if ( my $u = session('name') ){
+                                        % 
 						<li><a href='/'>Search</a></li>
-						<li><a href='/user/<%= session('name') %>'>Homepage</a></li>
-						<li><a href='/logout'>Sign-Out</a></li>
+						<li><a href='/user/<%= session('name') %>'>My Page</a></li>
+						<li><a href='/logout'>Sign-Out (<%= $u %>)</a></li>
 						<li><a href='/basket/view'>Basket</a></li>
 					% } else {
 						<li><a href='/'>Home</a></li>
@@ -23,6 +26,11 @@
 					% }
 				</ul>
 			</nav><!--end:nav-->
+			<p>
+    % if (my $message = flash 'message') {
+      <p><b>FLASH: <%= $message %></b></p>
+    % }
+			</p>
 	  	<div id="container">
 	  	 	 <%= content %>
 	 	</div>

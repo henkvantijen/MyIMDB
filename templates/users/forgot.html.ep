@@ -1,0 +1,22 @@
+% layout 'default';
+% title 'Password Reset';
+
+<h2>Reset Password</h2>
+
+% if( flash 'login' ) {
+	%= flash 'login'
+% }
+
+% if (stash 'error') {
+	Sorry, email address unknown 
+% } 
+
+%= form_for 'forgot' => (method => 'POST') => begin
+    <table>
+		<tr><td>Email:</td><td> <%= text_field 'email' %> </td></tr>
+	</table>
+    %= submit_button 'Request Password Reset'
+% end
+
+
+
