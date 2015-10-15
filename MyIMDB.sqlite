@@ -11,6 +11,7 @@ DROP TABLE "movie_genres";
 DROP TABLE `user_roles`; 
 DROP TABLE `user_role_types`; 
 
+-- test
 CREATE TABLE 'users' ( 
 	-- user_id INTEGER PRIMARY KEY, 
 	id INTEGER PRIMARY KEY,
