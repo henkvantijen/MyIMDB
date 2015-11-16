@@ -1,0 +1,29 @@
+% title "user Details";
+
+% my $user = stash('user');
+
+<%= $user->name %>'s rated movies are:
+% foreach( $user->movies ){
+	<ul>
+	% if( $_->rated eq 'y' ){
+		<li><%= $_->movie_id->name %></li>
+	% }	
+	</ul>
+% }
+</br>
+<%= $user->name %> commented on the following movies:
+<ul>
+	% while( my($movie_names, $movie_comments) = each(%$comments) ){
+		<li> <%= $movie_names %>
+			<ul>
+				% while( my($k, $v) = each(%$movie_comments) ){
+					<li><%= $v %></li>
+				% }
+			</ul>
+		</li>
+	% }
+</ul>
+
+
+	
+

@@ -1,0 +1,24 @@
+% title 'Admin all users';
+% layout 'default';
+
+
+<h2>Users Management - Admin User </h2>
+
+  % if (scalar (@$all_users) > 0) {
+
+      <table border="1">
+        <th>User name</th>
+        <th>Blocked?</th>
+        <th>Action</th>
+        % foreach( @$all_users ){
+          <tr>
+            <td><a href="<%= $_->user_name %>"><%= $_->user_name %></a></td>
+            <td><%= $_->is_blocked %> </td>
+            <td>  <a href="/admin/users/<%= $_->id %>/block">Toggle Blocked</a></td>
+          </tr>
+         % }
+      </table>
+
+	% } else {
+    No users found!
+  %}
